@@ -10,6 +10,7 @@ Supports:
 - Every line is generated separately.
 - Resume support: skips lines that already have a valid WAV.
 - Per-line config overrides are supported.
+- Progress bar with % done, sec/line, and ETA.
 """
 
 import argparse
@@ -20,6 +21,7 @@ import os
 import random
 import re
 import shutil
+import sys
 import time
 from pathlib import Path
 
@@ -71,6 +73,40 @@ def resolve_path(root: Path, path_str: str) -> Path:
     if not p.is_absolute():
         p = (root / p).resolve()
     return p
+
+
+def format_duration(seconds: float) -> str:
+    if seconds < 0 or seconds != seconds:  # NaN
+        return "--:--"
+    seconds = int(round(seconds))
+    h, rem = divmod(seconds, 3600)
+    m, s = divmod(rem, 60)
+    if h > 0:
+        return f"{h:d}h{m:02d}m{s:02d}s"
+    if m > 0:
+        return f"{m:d}m{s:02d}s"
+    return f"{s:d}s"
+
+
+def render_progress(done: int, total: int, avg_sec: float, bar_width: int = 28) -> str:
+    """Single-line progress: bar, percent, counts, sec/line, ETA."""
+    if total <= 0:
+        pct = 100.0
+        filled = bar_width
+    else:
+        pct = 100.0 * done / total
+        filled = int(bar_width * done / total)
+
+    bar = "█" * filled + "░" * (bar_width - filled)
+    remaining = max(total - done, 0)
+    eta = avg_sec * remaining if avg_sec > 0 else 0.0
+
+    return (
+        f"[{bar}] {pct:5.1f}%  "
+        f"{done}/{total}  "
+        f"{avg_sec:6.1f}s/line  "
+        f"ETA {format_duration(eta)}"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -200,8 +236,8 @@ def main():
 
     rebuild_catalog()
 
-    # Count remaining work
-    remaining = 0
+    # Work queue: only lines that still need generation
+    work = []
     for i, line in enumerate(lines):
         lid = str(line.get("id", f"{i+1:03d}"))
         speaker_key = line["speaker"]
@@ -210,7 +246,9 @@ def main():
         filename = f"{lid}_{slugify(speaker_key)}_seed_{seed}.wav"
         out = OUTPUT_DIR / filename
         if not (out.exists() and out.stat().st_size > 10000):
-            remaining += 1
+            work.append((i, line))
+
+    total_work = len(work)
 
     print()
     print("=" * 60)
@@ -221,11 +259,11 @@ def main():
     print(f"Mode:       {mode}")
     print(f"Model:      {MODEL_DIR}")
     print(f"Lines:      {len(lines)}")
-    print(f"Remaining:  {remaining}")
+    print(f"Remaining:  {total_work}")
     print(f"Threads:    {torch.get_num_threads()}")
     print()
 
-    if remaining == 0:
+    if total_work == 0:
         print("All lines already generated. Nothing to do.")
         return
 
@@ -241,12 +279,17 @@ def main():
     )
     print(f"Model loaded in {time.monotonic() - t0:.1f}s")
     print()
+    print(render_progress(0, total_work, 0.0))
+    sys.stdout.flush()
 
     # ------------------------------------------------------------------
-    # Generate every line
+    # Generate every remaining line
     # ------------------------------------------------------------------
+    times = []  # wall seconds per successful (or attempted) generation
+    done_count = 0
+
     try:
-        for i, line in enumerate(lines):
+        for work_index, (i, line) in enumerate(work):
             lid = str(line.get("id", f"{i+1:03d}"))
             speaker_key = line["speaker"]
             if speaker_key not in speakers:
@@ -256,16 +299,15 @@ def main():
             seed = get_line_seed(line, speaker, defaults, i)
             text = line["text"].strip()
             if not text:
-                print(f"SKIP empty text on line {lid}")
+                print(f"\nSKIP empty text on line {lid}")
+                done_count += 1
+                avg = (sum(times) / len(times)) if times else 0.0
+                print(render_progress(done_count, total_work, avg))
+                sys.stdout.flush()
                 continue
 
             filename = f"{lid}_{slugify(speaker_key)}_seed_{seed}.wav"
             output_path = OUTPUT_DIR / filename
-
-            # Resume
-            if output_path.exists() and output_path.stat().st_size > 10000:
-                print(f"SKIP existing: {filename}")
-                continue
 
             # Per-line overrides
             temp = float(line.get("temperature", TEMPERATURE))
@@ -310,6 +352,7 @@ def main():
                 encoding="utf-8",
             )
 
+            print()
             print("-" * 60)
             print(f"Line {lid}  |  {speaker.get('name', speaker_key)}  [{mode}]")
             print(f"Seed: {seed}")
@@ -318,6 +361,7 @@ def main():
             print(f"Direction: {line.get('direction', '')}")
             print(f"Text: {text}")
             print("-" * 60)
+            sys.stdout.flush()
 
             # Deterministic seed for this line
             random.seed(seed)
@@ -355,10 +399,18 @@ def main():
                 sf.write(output_path, wav, sample_rate)
                 duration = len(wav) / float(sample_rate)
                 elapsed = time.monotonic() - started
+                times.append(elapsed)
 
                 print(f"DONE  {duration:.2f}s audio  |  {elapsed:.1f}s wall")
             except Exception as exc:
+                elapsed = time.monotonic() - started
+                times.append(elapsed)
                 print(f"FAILED: {type(exc).__name__}: {exc}")
+
+            done_count += 1
+            avg = sum(times) / len(times)
+            print(render_progress(done_count, total_work, avg))
+            sys.stdout.flush()
 
             gc.collect()
             rebuild_catalog()
@@ -370,7 +422,12 @@ def main():
             torch.cuda.empty_cache()
 
     print()
-    print("Story generation finished.")
+    if times:
+        print(
+            f"Finished {done_count}/{total_work}  |  "
+            f"avg {sum(times)/len(times):.1f}s/line  |  "
+            f"total gen {format_duration(sum(times))}"
+        )
     print(f"Catalog: {catalog_path}")
 
 
