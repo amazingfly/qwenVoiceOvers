@@ -1,0 +1,17 @@
+{
+  "voice_name": "Young Witch",
+  "voice_slug": "03_young_witch",
+  "seed": 53955,
+  "dialog_name": "focused_urgency",
+  "voice_description": "A young adult female witch in her early twenties with a clear lively mezzo-soprano voice, moderately high pitch, smooth youthful timbre, quick expressive intonation, and a subtle breathy quality. Clever, confident, playful, curious, and adventurous. Her voice should work naturally for both ordinary conversation and emotionally charged fantasy dialogue.",
+  "direction": "The witch becomes serious and urgent without shouting. Slightly faster pace, firmer articulation, and concentrated emotional intensity while preserving her normal voice identity.",
+  "instruct": "A young adult female witch in her early twenties with a clear lively mezzo-soprano voice, moderately high pitch, smooth youthful timbre, quick expressive intonation, and a subtle breathy quality. Clever, confident, playful, curious, and adventurous. Her voice should work naturally for both ordinary conversation and emotionally charged fantasy dialogue.\n\nFor this line: The witch becomes serious and urgent without shouting. Slightly faster pace, firmer articulation, and concentrated emotional intensity while preserving her normal voice identity.",
+  "text": "Listen to me. We have maybe two minutes before that spell collapses. Take the lantern, stay beside the wall, and do exactly what I say. We can still fix this, but only if nobody tries to be clever for once.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

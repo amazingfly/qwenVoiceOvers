@@ -1,0 +1,17 @@
+{
+  "voice_name": "Orc Warrior",
+  "voice_slug": "05_orc_warrior",
+  "seed": 69793,
+  "dialog_name": "casting_line",
+  "voice_description": "Role: massive non-human orc warrior with a strongly shaped fantasy-creature voice. Gender: male. Age: mature adult. Persistent vocal posture: broad open throat combined with heavy jaw tension and constant chest-driven roughness. Pitch: very low baritone, broad and heavy rather than merely naturally deep. Resonance: enormous chest resonance with thick throat resonance and a slightly hollow large-bodied quality. Timbre: coarse, leathery, gravelly, dense, blunt and rough-edged. Phonation: compressed and forceful with restrained rasp, occasional low vocal fry and subtle throat rattle. Breathing: powerful audible nose-and-mouth breaths between some phrases, like a very large creature controlling its physical energy. Articulation: hard consonant attacks, wide flattened vowels and slightly shortened word endings. Prosody: blunt rhythmic phrases, limited melodic movement, long downward endings and sudden forceful stresses. Personality: practical, fearless, impatient, disciplined and battle-hardened. Important: the entire speaking mechanism should suggest different anatomy and enormous physical size. Do not simply produce a muscular human man with a deep voice.",
+  "direction": "Speak with restrained battlefield authority. Use a heavy audible breath before one sentence and let occasional rough throat texture appear naturally. No roaring; maintain the shaped orc voice throughout calm speech.",
+  "instruct": "Role: massive non-human orc warrior with a strongly shaped fantasy-creature voice. Gender: male. Age: mature adult. Persistent vocal posture: broad open throat combined with heavy jaw tension and constant chest-driven roughness. Pitch: very low baritone, broad and heavy rather than merely naturally deep. Resonance: enormous chest resonance with thick throat resonance and a slightly hollow large-bodied quality. Timbre: coarse, leathery, gravelly, dense, blunt and rough-edged. Phonation: compressed and forceful with restrained rasp, occasional low vocal fry and subtle throat rattle. Breathing: powerful audible nose-and-mouth breaths between some phrases, like a very large creature controlling its physical energy. Articulation: hard consonant attacks, wide flattened vowels and slightly shortened word endings. Prosody: blunt rhythmic phrases, limited melodic movement, long downward endings and sudden forceful stresses. Personality: practical, fearless, impatient, disciplined and battle-hardened. Important: the entire speaking mechanism should suggest different anatomy and enormous physical size. Do not simply produce a muscular human man with a deep voice.\n\nFor this line: Speak with restrained battlefield authority. Use a heavy audible breath before one sentence and let occasional rough throat texture appear naturally. No roaring; maintain the shaped orc voice throughout calm speech.",
+  "text": "Hrrm. Keep your shield high and stay beside me. Those creatures are waiting for somebody to panic, so don't give them the pleasure. When they charge, plant your feet, breathe once... and let them discover why we came prepared.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

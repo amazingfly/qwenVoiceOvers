@@ -1,0 +1,17 @@
+{
+  "voice_name": "Werewolf",
+  "voice_slug": "07_werewolf",
+  "seed": 85631,
+  "dialog_name": "watchful_normal",
+  "voice_description": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.",
+  "direction": "The werewolf speaks in his characteristic normal voice: low, tense, slightly breathy and rough, constantly alert but fully controlled. He sounds like someone accustomed to noticing danger before everyone else.",
+  "instruct": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.\n\nFor this line: The werewolf speaks in his characteristic normal voice: low, tense, slightly breathy and rough, constantly alert but fully controlled. He sounds like someone accustomed to noticing danger before everyone else.",
+  "text": "We're being followed. Whoever it is has kept the same distance since sunset and knows enough to stay downwind. Don't turn around. Keep walking normally until we reach the stones, then we'll decide whether we want to meet them.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

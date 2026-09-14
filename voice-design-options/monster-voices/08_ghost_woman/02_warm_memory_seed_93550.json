@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ghost Woman",
+  "voice_slug": "08_ghost_woman",
+  "seed": 93550,
+  "dialog_name": "warm_memory",
+  "voice_description": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.",
+  "direction": "The ghost speaks with restrained warmth and nostalgia. Maintain her airy soprano and delicate delivery, but allow more affection and life into the voice.",
+  "instruct": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.\n\nFor this line: The ghost speaks with restrained warmth and nostalgia. Maintain her airy soprano and delicate delivery, but allow more affection and life into the voice.",
+  "text": "There used to be music in this room every evening. My sisters would dance beside the windows while I played the little piano in the corner. Sometimes, when the moon is bright enough, I can almost hear them again.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

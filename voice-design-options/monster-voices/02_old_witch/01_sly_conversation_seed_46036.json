@@ -1,0 +1,17 @@
+{
+  "voice_name": "Old Witch",
+  "voice_slug": "02_old_witch",
+  "seed": 46036,
+  "dialog_name": "sly_conversation",
+  "voice_description": "An elderly female witch around eighty years old with a thin mid-to-high pitched voice, dry scratchy timbre, gentle rasp, and naturally creaky age. Clever, eccentric, suspicious, slyly humorous, and slightly wicked. Her rhythm is uneven but natural, with excellent intelligibility. She should sound distinctly old and witchlike without becoming a caricature.",
+  "direction": "The old witch speaks in her normal characteristic voice, sounding clever, secretive, and faintly amused. Moderate volume, deliberate pacing, and occasional sly emphasis.",
+  "instruct": "An elderly female witch around eighty years old with a thin mid-to-high pitched voice, dry scratchy timbre, gentle rasp, and naturally creaky age. Clever, eccentric, suspicious, slyly humorous, and slightly wicked. Her rhythm is uneven but natural, with excellent intelligibility. She should sound distinctly old and witchlike without becoming a caricature.\n\nFor this line: The old witch speaks in her normal characteristic voice, sounding clever, secretive, and faintly amused. Moderate volume, deliberate pacing, and occasional sly emphasis.",
+  "text": "Come inside, child. Don't worry about the ravens; they complain about everybody. Sit beside the stove and tell me what you saw in the forest. And please be accurate. Magical disasters are much easier to fix when people remember the inconvenient details.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

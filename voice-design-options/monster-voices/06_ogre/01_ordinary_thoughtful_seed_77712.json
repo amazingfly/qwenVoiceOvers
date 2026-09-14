@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ogre",
+  "voice_slug": "06_ogre",
+  "seed": 77712,
+  "dialog_name": "ordinary_thoughtful",
+  "voice_description": "A huge middle-aged male ogre with a very deep bass voice, thick heavy resonance, and rough but warm timbre. Slow speech, thoughtful pauses, and slightly clumsy but understandable articulation. Simple, stubborn, physically enormous, and unexpectedly gentle. His identity should come from size, resonance, pacing, and personality rather than exaggerated stupidity.",
+  "direction": "The ogre speaks in his normal characteristic voice, slowly and thoughtfully, with enormous warm bass resonance and natural pauses while he works through an idea.",
+  "instruct": "A huge middle-aged male ogre with a very deep bass voice, thick heavy resonance, and rough but warm timbre. Slow speech, thoughtful pauses, and slightly clumsy but understandable articulation. Simple, stubborn, physically enormous, and unexpectedly gentle. His identity should come from size, resonance, pacing, and personality rather than exaggerated stupidity.\n\nFor this line: The ogre speaks in his normal characteristic voice, slowly and thoughtfully, with enormous warm bass resonance and natural pauses while he works through an idea.",
+  "text": "Ogre thinks there is another way across river. Bridge looks small, and Ogre is not small. Maybe we walk upstream until rocks get closer together. Takes longer, yes, but falling into river takes even longer if somebody has to pull Ogre back out.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

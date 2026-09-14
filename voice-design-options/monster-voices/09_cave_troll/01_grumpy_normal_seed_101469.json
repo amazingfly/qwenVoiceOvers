@@ -1,0 +1,17 @@
+{
+  "voice_name": "Cave Troll",
+  "voice_slug": "09_cave_troll",
+  "seed": 101469,
+  "dialog_name": "grumpy_normal",
+  "voice_description": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.",
+  "direction": "The troll speaks in his normal characteristic voice with weary irritation, rough gravel, dry humor, and the sense that visitors are generally an inconvenience.",
+  "instruct": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.\n\nFor this line: The troll speaks in his normal characteristic voice with weary irritation, rough gravel, dry humor, and the sense that visitors are generally an inconvenience.",
+  "text": "Another traveler. Wonderful. Let me guess: cursed treasure, missing princess, mysterious prophecy? Nobody comes to my cave anymore just to have a pleasant conversation. Sit down if you must, but wipe your boots before you ruin the moss.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

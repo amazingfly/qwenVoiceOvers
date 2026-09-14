@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ancient Demon",
+  "voice_slug": "01_ancient_demon",
+  "seed": 38117,
+  "dialog_name": "controlled_anger",
+  "voice_description": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.",
+  "direction": "The demon becomes firmly angry without shouting. His voice grows heavier and more intense, with stronger emphasis and slightly quicker pacing, but he maintains complete vocal control and clear speech.",
+  "instruct": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.\n\nFor this line: The demon becomes firmly angry without shouting. His voice grows heavier and more intense, with stronger emphasis and slightly quicker pacing, but he maintains complete vocal control and clear speech.",
+  "text": "That was your warning. There will not be another. Put the flame back where you found it and step away from the altar. I have been patient because you are young, but even my patience eventually reaches its end.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

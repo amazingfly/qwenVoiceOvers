@@ -1,0 +1,17 @@
+{
+  "voice_name": "Cave Troll",
+  "voice_slug": "09_cave_troll",
+  "seed": 101469,
+  "dialog_name": "territorial_warning",
+  "voice_description": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.",
+  "direction": "The troll becomes firm and intimidating without roaring. He speaks more slowly with heavier emphasis and unmistakable territorial authority.",
+  "instruct": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.\n\nFor this line: The troll becomes firm and intimidating without roaring. He speaks more slowly with heavier emphasis and unmistakable territorial authority.",
+  "text": "This bridge belongs to me. I built it before your grandfather's grandfather was born, and I have repaired it after every flood since. You may cross if you ask politely. You may not cross by threatening me.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

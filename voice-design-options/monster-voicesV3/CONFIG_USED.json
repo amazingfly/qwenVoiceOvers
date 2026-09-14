@@ -1,0 +1,134 @@
+{
+  "voices": [
+    {
+      "slug": "01_ancient_demon",
+      "name": "Ancient Demon",
+      "seeds": [38117, 74629, 91583, 52841],
+      "description": "Role: ancient non-human demon, performed as a strongly shaped classic animated monster voice rather than a realistic human villain. Gender: male. Apparent age: ancient and immensely powerful. Persistent vocal posture: maintain an unnatural constricted throat posture throughout every word, as though the voice comes from a huge chest and a narrow, rough supernatural throat. Pitch: extremely low bass, substantially below ordinary conversational male speech. Resonance: cavernous chest resonance combined with dark throat resonance and a hollow internal echo-like quality produced naturally by the performance, not by electronic effects. Timbre: coarse, smoky, gritty, creaky, leathery and rumbling. Phonation: densely compressed with restrained vocal fry, occasional low throat rattles and brief rough catches at the beginnings or endings of phrases. Breathing: heavy, deliberate creature-like exhalations between some phrases; occasionally release a short irritated nasal breath or low grunt. Articulation: heavy consonant attacks, broad dark vowels, slightly exaggerated mouth shapes and slow weighty syllables. Prosody: irregular pauses, deep downward inflections and sudden short emphasis on threatening words. Personality: intelligent, predatory, arrogant and darkly amused. Important: every ordinary sentence must retain the creature voice. Do not revert to a normal deep-voiced human narrator between dramatic moments. The listener should immediately hear an unnatural demonic creature even when he is speaking calmly.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak conversationally but with persistent demonic vocal shaping. Begin with a brief low amused throat sound before the first sentence. Use one or two restrained rumbling breaths or guttural vocal catches between clauses. Do not scream. The voice itself, rather than volume, should sound monstrous and unnatural.",
+          "text": "Hmph... so, little queen, you finally opened my gate. I have watched kingdoms rise, rot, and disappear while I waited beneath this mountain. Ah... come closer. I want to see what sort of creature was foolish enough to wake me."
+        }
+      ]
+    },
+    {
+      "slug": "02_old_witch",
+      "name": "Old Witch",
+      "seeds": [41273, 80731, 63917, 27449],
+      "description": "Role: extremely old storybook witch with a highly shaped animated character voice. Gender: female. Age: around ninety years old, physically aged but mentally sharp. Persistent vocal posture: narrow forward mouth position with tight nasal resonance and a dry, lightly constricted throat throughout the entire performance. Pitch: thin upper-mid register with unstable little rises, downward cracks and occasional unexpectedly low creaky notes. Resonance: strongly forward and nasal with very little chest resonance. Timbre: papery, brittle, reedy, scratchy, dry, creaky and slightly wheezing. Phonation: irregular aged vocal-fold closure with vocal fry, tiny voice cracks and occasional quavering. Breathing: small audible inhales, dry little huffs and occasional amused breathy chuckles between thoughts. Articulation: sharp consonants, stretched crooked vowels and peculiar emphasis on interesting words. Prosody: highly irregular rhythm with sly pauses, quick bursts and strange melodic turns. Personality: clever, eccentric, mischievous, suspicious and delighted by dangerous magic. Important: this must sound like a deliberately performed classic animated witch character, not merely an elderly woman reading dialogue. Maintain the crooked, reedy, creaky vocal posture through every sentence.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Use sly conversational amusement with little dry chuckles, creaky pitch changes and tiny suspicious pauses. Allow a brief breathy 'heh' or amused vocal catch naturally between phrases, but keep the speech intelligible.",
+          "text": "Heh... there you are. I wondered how long it would take you to find my cottage. Come in, come in. The kettle is warm, the ravens are behaving terribly, and something in my cupboard has been whispering your name since midnight."
+        }
+      ]
+    },
+    {
+      "slug": "03_young_witch",
+      "name": "Young Witch",
+      "seeds": [36749, 85411, 62303, 19477],
+      "description": "Role: young magical witch with an exaggerated, highly animated fantasy-character voice rather than a conventional young female narrator. Gender: female. Age: early twenties. Persistent vocal posture: bright forward resonance with a slightly pinched magical sharpness and light breath pressure carried through ordinary speech. Pitch: moderately high with unusually agile pitch movement, sudden upward flicks and quick melodic drops. Resonance: bright face-forward resonance with light chest support. Timbre: sparkling, breathy, slightly sharp, youthful and faintly mischievous. Phonation: flexible and energetic with occasional airy onset, tiny vocal catches and playful creaky endings. Breathing: quick excited inhales and little amused exhalations when something surprises her. Articulation: crisp, rapid consonants and lively vowel changes. Prosody: highly animated timing, sudden emphasis, little pauses of discovery and quick shifts between curiosity and confidence. Personality: clever, fearless, playful, mischievous and fascinated by magic. Important: maintain a distinct stylized fantasy-witch personality in the actual sound of the voice, not merely in acting emotion. Avoid a polished generic audiobook voice.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak with delighted magical curiosity and quick expressive changes. Include a tiny surprised breath or vocal catch when noticing the strange magic. Keep the voice strongly characterful but natural enough for recurring dialogue.",
+          "text": "Oh! Wait, that's interesting. The spell is definitely not supposed to glow purple, and I'm almost certain the floor wasn't breathing a moment ago. Hmm... don't worry. This is either an incredible discovery or a very educational disaster."
+        }
+      ]
+    },
+    {
+      "slug": "04_goblin",
+      "name": "Goblin",
+      "seeds": [29173, 66821, 94367, 51709],
+      "description": "Role: small non-human goblin with an aggressively shaped classic animated creature voice. Gender: male. Age: adult creature. Persistent vocal posture: keep the throat tight, jaw slightly clenched and sound strongly focused through the nose and front of the mouth during every word. Pitch: unnaturally high male register with abrupt squeaky peaks, cracks and sharp downward drops. Resonance: intensely nasal, tiny, throat-forward and almost completely lacking in chest weight. Timbre: wiry, reedy, scratchy, pinched, dry and slightly squeaky. Phonation: compressed, strained and restless, with tiny creaks and occasional raspy catches. Breathing: short snuffling nasal inhales, quick huffs and little greedy snorts between phrases. Articulation: clipped syllables, extremely sharp consonants, quick tongue movement and exaggerated mouth shapes. Prosody: twitchy, irregular, unpredictable pitch jumps and rapid changes in speed. Personality: greedy, clever, suspicious, energetic, cowardly and mischievous. Important: this should immediately sound like a small non-human goblin even during ordinary speech. Do not produce merely a nasal young man or cute cartoon child voice.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak rapidly with greedy excitement. Add one or two small snuffling or snorting breaths between thoughts and use sudden pitch jumps. Do not scream; the persistent nasal, compressed, wiry vocal posture should create the creature identity.",
+          "text": "Gold? Hnh! You should have mentioned gold first! I know the tunnel, I know the lock, and I even know which dragon sleeps through thunderstorms. Mm-hm... for a modest fee, naturally, I could make all of us extraordinarily rich."
+        }
+      ]
+    },
+    {
+      "slug": "05_orc_warrior",
+      "name": "Orc Warrior",
+      "seeds": [45361, 78233, 31627, 90749],
+      "description": "Role: massive non-human orc warrior with a strongly shaped fantasy-creature voice. Gender: male. Age: mature adult. Persistent vocal posture: broad open throat combined with heavy jaw tension and constant chest-driven roughness. Pitch: very low baritone, broad and heavy rather than merely naturally deep. Resonance: enormous chest resonance with thick throat resonance and a slightly hollow large-bodied quality. Timbre: coarse, leathery, gravelly, dense, blunt and rough-edged. Phonation: compressed and forceful with restrained rasp, occasional low vocal fry and subtle throat rattle. Breathing: powerful audible nose-and-mouth breaths between some phrases, like a very large creature controlling its physical energy. Articulation: hard consonant attacks, wide flattened vowels and slightly shortened word endings. Prosody: blunt rhythmic phrases, limited melodic movement, long downward endings and sudden forceful stresses. Personality: practical, fearless, impatient, disciplined and battle-hardened. Important: the entire speaking mechanism should suggest different anatomy and enormous physical size. Do not simply produce a muscular human man with a deep voice.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak with restrained battlefield authority. Use a heavy audible breath before one sentence and let occasional rough throat texture appear naturally. No roaring; maintain the shaped orc voice throughout calm speech.",
+          "text": "Hrrm. Keep your shield high and stay beside me. Those creatures are waiting for somebody to panic, so don't give them the pleasure. When they charge, plant your feet, breathe once... and let them discover why we came prepared."
+        }
+      ]
+    },
+    {
+      "slug": "06_ogre",
+      "name": "Ogre",
+      "seeds": [33569, 72113, 86437, 24971],
+      "description": "Role: enormous non-human ogre with a deliberately oversized animated creature voice. Gender: male. Age: middle-aged adult creature. Persistent vocal posture: mouth and throat feel physically huge and slow, as though every syllable is being formed by a creature several times human size. Pitch: exceptionally low bass with slow heavy pitch movement. Resonance: gigantic hollow chest resonance, thick throat resonance and rounded mouth resonance. Timbre: booming, thick, muddy, rough, warm, rounded and slightly gravelly. Phonation: heavy, loose and slow with occasional low creak or rumbling onset. Breathing: very large slow breaths, occasional nasal huffs and audible effort before longer phrases. Articulation: oversized rounded vowels, softened consonants and slow cumbersome mouth movements while remaining intelligible. Prosody: long thoughtful pauses and simple broad emphasis. Personality: stubborn, sincere, slightly confused, physically powerful and unexpectedly sweet. Important: the voice should imply gigantic anatomy. Avoid a normal bass human voice and avoid making him merely stupid or comedic.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak slowly with enormous physical vocal weight. Use a large thoughtful breath and one small puzzled grunt. Keep the creature voice warm rather than threatening.",
+          "text": "Hmm... Ogre thinks little bridge may have problem. Bridge is small. Ogre is... very much not small. Maybe we find another road before everybody learns what happens when extremely large ogre and extremely small bridge disagree."
+        }
+      ]
+    },
+    {
+      "slug": "07_werewolf",
+      "name": "Werewolf",
+      "seeds": [49877, 83639, 26513, 70181],
+      "description": "Role: werewolf capable of human language, with an unmistakably animal-shaped speaking voice. Gender: male. Age: mature adult. Persistent vocal posture: tense throat, partially clenched jaw and chest-driven breath pressure throughout all speech, as though human words are being forced through predatory anatomy. Pitch: low baritone with frequent dark dips and restrained rough undertones. Resonance: chest-heavy with tense pharyngeal throat resonance. Timbre: dark, breathy, raspy, feral, rough and slightly growling even when calm. Phonation: compressed with vocal fry, intermittent throat vibration and a subtle low rumble under sustained vowels. Breathing: clearly audible predatory inhalations through the nose, low exhalations and occasional restrained huffs. Articulation: clear words but with heavier consonants, slightly elongated dark vowels and a tight-jawed quality. Prosody: alert pauses, sudden emphasis and restrained melodic range. Personality: vigilant, dangerous, protective and constantly controlling animal instinct. Important: the wolfish quality must persist through normal speech. Do not simply make a raspy action-hero voice.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak quietly and intensely with animal tension under every word. Include one audible sniffing inhale or restrained low huff before identifying the danger. Do not fully growl; the voice should sound as though a growl is permanently just beneath the speech.",
+          "text": "Wait... I smell something. We're being followed. Don't turn around. Whoever it is has stayed downwind since sunset, which means they know exactly what I am. Keep walking until we reach the stones. If they come closer... I'll handle it."
+        }
+      ]
+    },
+    {
+      "slug": "08_ghost_woman",
+      "name": "Ghost Woman",
+      "seeds": [31847, 75941, 98231, 54109],
+      "description": "Role: supernatural female ghost with a distinctly non-living, shaped animated voice. Gender: female. Apparent age: around thirty. Persistent vocal posture: extremely light breath-supported phonation with minimal chest involvement, as though the voice barely has a physical body producing it. Pitch: high soft soprano with slow floating movement and occasional strange downward slips. Resonance: primarily airy head resonance with very weak chest resonance and a thin hollow quality. Timbre: pale, breathy, glassy, fragile, wispy, distant and cold. Phonation: incomplete vocal closure producing significant breath noise around a delicate voiced core. Breathing: unusually soft drawn-out inhalations and fading breath after phrases. Articulation: smooth softened consonants, long fading vowels and slightly blurred phrase endings. Prosody: suspended timing, unnatural pauses and lingering endings that seem reluctant to stop. Personality: sorrowful, gentle, mysterious and detached from ordinary time. Important: she should sound physically insubstantial and supernatural even when speaking normally. Avoid merely producing a quiet elegant woman.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak softly with lingering breath and unnaturally suspended timing. Let one phrase fade nearly into breath before recovering into speech. Do not use a full whisper; preserve enough vocal tone to establish a cloneable identity.",
+          "text": "You... can see me, can't you? It has been so many years since anyone looked directly at this window. Please don't be afraid. I have waited here only because there was something... something I promised I would never leave behind."
+        }
+      ]
+    },
+    {
+      "slug": "09_cave_troll",
+      "name": "Cave Troll",
+      "seeds": [42703, 69371, 85109, 23687],
+      "description": "Role: ancient non-human cave troll with a rugged classic animated monster voice. Gender: male. Age: old but still immensely strong. Persistent vocal posture: rough open throat combined with heavy nasal resonance and an irregular rattling vocal mechanism. Pitch: low-to-mid baritone that unpredictably drops into coarse lower notes. Resonance: thick chest resonance, strong nasal resonance and rough throat resonance mixed together. Timbre: rocky, gritty, rattling, creaky, weathered, nasal and slightly phlegmy without becoming disgusting. Phonation: irregular and unstable with frequent vocal fry, little throat rattles and rough catches. Breathing: grumbling exhales, irritated nasal huffs and occasional low throat clearing-like noises between thoughts. Articulation: broad vowels, crooked consonants and slightly uneven word shapes. Prosody: grumbling downward curves, strange pauses and dry comic timing. Personality: ancient, territorial, irritated, stubborn and unexpectedly intelligent. Important: the rough creature posture must remain obvious through all normal dialogue. Do not simply produce an old gravelly human man.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak with weary creature-like irritation and dry humor. Add a low grumbling onset and one irritated nasal huff between sentences. Maintain the rocky, rattling quality without losing intelligibility.",
+          "text": "Hrrmph... another hero. Wonderful. Let me guess: lost treasure, cursed sword, mysterious prophecy? Nobody visits a cave anymore just to have a pleasant conversation. Hnh. Sit down if you must, but wipe your boots before you ruin the moss."
+        }
+      ]
+    },
+    {
+      "slug": "10_ancient_dragon",
+      "name": "Ancient Dragon",
+      "seeds": [57283, 91457, 34819, 76321],
+      "description": "Role: colossal ancient female dragon capable of elegant human language, with a highly shaped epic animated creature voice. Gender: female. Age: many centuries old and immensely powerful. Persistent vocal posture: maintain enormous low chest-and-throat resonance through every word, as if speech is being produced inside a body vastly larger than a human body. Pitch: exceptionally low female contralto, intentionally beneath ordinary female conversational range. Resonance: huge cavernous chest resonance, deep throat resonance and broad mouth resonance. Timbre: smoky, dark, velvety, resonant, slightly metallic, subtly rough and immensely full. Phonation: dense controlled vocal production with slow low-frequency vibration, occasional creaky onset and subtle rumbling undertone. Breathing: slow powerful inhalations and warm resonant exhalations between major thoughts. Articulation: broad regal vowels, heavily weighted consonants and very precise diction. Prosody: majestic long downward contours, wide pauses and deliberate changes in intensity. Personality: ancient, intelligent, proud, dangerous, patient and faintly amused. Important: apparent physical scale must remain unmistakably non-human throughout ordinary speech. Do not simply produce a deep-voiced woman or dramatic audiobook narrator.",
+      "dialogs": [
+        {
+          "name": "casting_line",
+          "direction": "Speak with immense serene authority. Begin after a slow resonant breath and allow a subtle low rumbling undertone around the opening words. Keep the delivery elegant rather than roaring; physical scale and vocal posture should make it unmistakably draconic.",
+          "text": "Ahhh... so this is the little queen everyone has been whispering about. Come closer. I have watched kingdoms rise and disappear from these mountains, yet somehow your name has traveled farther than armies. I would very much like to know why."
+        }
+      ]
+    }
+  ]
+}

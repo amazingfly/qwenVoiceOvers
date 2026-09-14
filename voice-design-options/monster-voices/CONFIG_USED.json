@@ -1,0 +1,224 @@
+{
+  "voices": [
+    {
+      "slug": "01_ancient_demon",
+      "name": "Ancient Demon",
+      "description": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.",
+      "dialogs": [
+        {
+          "name": "calm_menace",
+          "direction": "The demon speaks in his natural characteristic voice: slow, resonant, controlled, and quietly threatening. He is completely calm because he believes he has absolute control of the situation.",
+          "text": "So, you are the little queen who opened the forgotten gate. Interesting. I expected someone taller. Still, courage has never cared much about size. Come closer and tell me why you have entered a place even kings were wise enough to avoid."
+        },
+        {
+          "name": "dark_amusement",
+          "direction": "The demon sounds genuinely amused and intrigued. Keep the same deep resonant voice and deliberate pacing, but add restrained warmth, dry humor, and a subtle smile rather than overt laughter.",
+          "text": "You actually stole the key from my guardian? I must admit, that is considerably more impressive than I expected. Perhaps I underestimated you. That happens very rarely, little queen, so enjoy the accomplishment while you still have time."
+        },
+        {
+          "name": "controlled_anger",
+          "direction": "The demon becomes firmly angry without shouting. His voice grows heavier and more intense, with stronger emphasis and slightly quicker pacing, but he maintains complete vocal control and clear speech.",
+          "text": "That was your warning. There will not be another. Put the flame back where you found it and step away from the altar. I have been patient because you are young, but even my patience eventually reaches its end."
+        }
+      ]
+    },
+    {
+      "slug": "02_old_witch",
+      "name": "Old Witch",
+      "description": "An elderly female witch around eighty years old with a thin mid-to-high pitched voice, dry scratchy timbre, gentle rasp, and naturally creaky age. Clever, eccentric, suspicious, slyly humorous, and slightly wicked. Her rhythm is uneven but natural, with excellent intelligibility. She should sound distinctly old and witchlike without becoming a caricature.",
+      "dialogs": [
+        {
+          "name": "sly_conversation",
+          "direction": "The old witch speaks in her normal characteristic voice, sounding clever, secretive, and faintly amused. Moderate volume, deliberate pacing, and occasional sly emphasis.",
+          "text": "Come inside, child. Don't worry about the ravens; they complain about everybody. Sit beside the stove and tell me what you saw in the forest. And please be accurate. Magical disasters are much easier to fix when people remember the inconvenient details."
+        },
+        {
+          "name": "gentle_secret",
+          "direction": "The witch speaks more softly and intimately while retaining her aged rasp and creaky timbre. She sounds unexpectedly kind but still cautious and mysterious.",
+          "text": "There is something your mother never told you. That little silver necklace was not merely a gift. It belonged to the first queen of the valley, and if it has begun glowing again, then something very old has finally awakened."
+        },
+        {
+          "name": "irritated_warning",
+          "direction": "The witch becomes sharply irritated and serious. Keep the same elderly voice, but use firmer articulation, stronger emphasis, and quicker pacing without yelling or exaggerated screeching.",
+          "text": "No, no, absolutely not. Put the purple bottle down. The red one makes smoke, the blue one makes rain, but that purple bottle once turned my entire kitchen into frogs. I have no intention of spending another afternoon catching furniture."
+        }
+      ]
+    },
+    {
+      "slug": "03_young_witch",
+      "name": "Young Witch",
+      "description": "A young adult female witch in her early twenties with a clear lively mezzo-soprano voice, moderately high pitch, smooth youthful timbre, quick expressive intonation, and a subtle breathy quality. Clever, confident, playful, curious, and adventurous. Her voice should work naturally for both ordinary conversation and emotionally charged fantasy dialogue.",
+      "dialogs": [
+        {
+          "name": "playful_confidence",
+          "direction": "The young witch speaks in her natural characteristic voice with quick wit, confident energy, and a lightly teasing smile. Animated but conversational rather than theatrical.",
+          "text": "Of course I know what I'm doing. Mostly. The spell is perfectly safe as long as nobody sneezes, touches the blue crystal, or asks why the floor is starting to glow. So perhaps we should all remain unusually calm for the next minute."
+        },
+        {
+          "name": "quiet_curiosity",
+          "direction": "She becomes softer and more thoughtful, with genuine fascination and wonder. Preserve the same youthful timbre and expressive intonation while lowering her energy.",
+          "text": "Look at the symbols around the doorway. They're changing whenever the moonlight touches them. I've read about magic like this, but I never thought I'd actually see it. Whatever is behind that door has been waiting for someone."
+        },
+        {
+          "name": "focused_urgency",
+          "direction": "The witch becomes serious and urgent without shouting. Slightly faster pace, firmer articulation, and concentrated emotional intensity while preserving her normal voice identity.",
+          "text": "Listen to me. We have maybe two minutes before that spell collapses. Take the lantern, stay beside the wall, and do exactly what I say. We can still fix this, but only if nobody tries to be clever for once."
+        }
+      ]
+    },
+    {
+      "slug": "04_goblin",
+      "name": "Goblin",
+      "description": "A small adult male goblin with a high-pitched wiry slightly nasal voice, thin raspy timbre, quick speech, sharp consonants, and restless expressive energy. Crafty, greedy, suspicious, clever, and easily excited. His voice should be unusual and recognizable but not so squeaky or exaggerated that ordinary dialogue becomes difficult to understand.",
+      "dialogs": [
+        {
+          "name": "crafty_bargaining",
+          "direction": "The goblin speaks in his normal characteristic voice: quick, crafty, slightly nasal, and eager. He is trying to make a deal and believes he is much smarter than everyone else.",
+          "text": "Now, nobody said anything about giving you the map for free. Maps are valuable. Extremely valuable. But perhaps we can make an arrangement. You have shiny coins, I have useful information, and neither of us needs to mention any of this to the troll."
+        },
+        {
+          "name": "cautious_suspicion",
+          "direction": "The goblin lowers his energy and becomes wary and suspicious. Keep the high wiry voice and nasal character, but slow him slightly and make him listen carefully between phrases.",
+          "text": "Something isn't right. The bats stopped making noise three tunnels ago, and bats never stop making noise. I think we should turn around very quietly and pretend we were never foolish enough to come down here."
+        },
+        {
+          "name": "annoyed_excitement",
+          "direction": "The goblin becomes animated and indignant, speaking faster with stronger emphasis, but do not push into screaming or cartoonish squealing. Keep the underlying voice stable.",
+          "text": "You opened the chest without me? I spent three days finding that chest! I crawled through mud, spiders, and one extremely rude mushroom for that treasure. At the very least, I deserve first choice of anything unnecessarily shiny."
+        }
+      ]
+    },
+    {
+      "slug": "05_orc_warrior",
+      "name": "Orc Warrior",
+      "description": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.",
+      "dialogs": [
+        {
+          "name": "steady_command",
+          "direction": "The orc speaks in his normal characteristic voice with calm battlefield authority. Deep, gravelly, direct, and confident, using short deliberate phrases without unnecessary aggression.",
+          "text": "Stay close and keep your eyes on the ridge. The enemy knows this valley better than we do, so let them make the first mistake. When they move, we move together. Nobody wanders off trying to become a hero."
+        },
+        {
+          "name": "protective_calm",
+          "direction": "The orc speaks more softly and patiently while retaining his deep coarse baritone. He sounds protective and reassuring rather than intimidating.",
+          "text": "You're all right. That cut looks worse than it is. Sit here for a moment and breathe. I've seen warriors twice your size panic over less. Being frightened doesn't matter. What matters is that you got back on your feet."
+        },
+        {
+          "name": "firm_anger",
+          "direction": "The orc becomes strongly angry but controlled. Increase vocal force and gravelly emphasis without roaring or shouting. He sounds dangerous because he is restraining himself.",
+          "text": "You were told to leave the village alone. I gave you that choice because I prefer solving problems without bloodshed. If you cross that bridge again, you will discover exactly how much patience I was showing you."
+        }
+      ]
+    },
+    {
+      "slug": "06_ogre",
+      "name": "Ogre",
+      "description": "A huge middle-aged male ogre with a very deep bass voice, thick heavy resonance, and rough but warm timbre. Slow speech, thoughtful pauses, and slightly clumsy but understandable articulation. Simple, stubborn, physically enormous, and unexpectedly gentle. His identity should come from size, resonance, pacing, and personality rather than exaggerated stupidity.",
+      "dialogs": [
+        {
+          "name": "ordinary_thoughtful",
+          "direction": "The ogre speaks in his normal characteristic voice, slowly and thoughtfully, with enormous warm bass resonance and natural pauses while he works through an idea.",
+          "text": "Ogre thinks there is another way across river. Bridge looks small, and Ogre is not small. Maybe we walk upstream until rocks get closer together. Takes longer, yes, but falling into river takes even longer if somebody has to pull Ogre back out."
+        },
+        {
+          "name": "gentle_reassurance",
+          "direction": "The ogre speaks softly and carefully, trying to reassure someone much smaller. Preserve his huge bass voice but make the delivery warm, patient, and tender.",
+          "text": "You don't have to hide behind tree. Ogre knows big teeth look scary, but Ogre is not going to eat anybody. Come sit by fire. There is soup, warm blanket, and enough room on log for one very small queen."
+        },
+        {
+          "name": "stubborn_annoyance",
+          "direction": "The ogre becomes moderately irritated and stubborn. His voice grows firmer and heavier, with stronger emphasis, but he does not bellow or lose control.",
+          "text": "Ogre already said no. Little wizard can explain spell again, and again, and maybe seventeen more times, but answer is still no. If ancient door says do not open, perhaps ancient door knows what it is talking about."
+        }
+      ]
+    },
+    {
+      "slug": "07_werewolf",
+      "name": "Werewolf",
+      "description": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.",
+      "dialogs": [
+        {
+          "name": "watchful_normal",
+          "direction": "The werewolf speaks in his characteristic normal voice: low, tense, slightly breathy and rough, constantly alert but fully controlled. He sounds like someone accustomed to noticing danger before everyone else.",
+          "text": "We're being followed. Whoever it is has kept the same distance since sunset and knows enough to stay downwind. Don't turn around. Keep walking normally until we reach the stones, then we'll decide whether we want to meet them."
+        },
+        {
+          "name": "quiet_protective",
+          "direction": "The werewolf speaks softly and reassuringly. Retain the dark rasp and low resonance, but reduce the tension and reveal a protective, surprisingly gentle side.",
+          "text": "You can sleep. I'll keep watch until morning. Nothing in these woods will come near the camp while I'm awake. And if you hear something moving beyond the firelight, don't worry. Chances are, it already knows I'm here."
+        },
+        {
+          "name": "restrained_threat",
+          "direction": "The werewolf becomes intensely threatening without growling heavily or shouting. Darker tone, stronger chest resonance, careful pauses, and tightly controlled anger.",
+          "text": "Walk away. I am asking nicely because there are children behind me, and I would prefer they not see what happens next. Take your men, take your weapons, and leave this forest while that choice still belongs to you."
+        }
+      ]
+    },
+    {
+      "slug": "08_ghost_woman",
+      "name": "Ghost Woman",
+      "description": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.",
+      "dialogs": [
+        {
+          "name": "gentle_presence",
+          "direction": "The ghost speaks in her natural characteristic voice: soft, airy, serene, and slightly distant. She is calm and approachable, with quiet sadness beneath the words.",
+          "text": "You can see me, can't you? It has been such a long time since anyone looked directly at me. Please don't be frightened. I have no wish to harm you. I only hoped someone might finally listen."
+        },
+        {
+          "name": "warm_memory",
+          "direction": "The ghost speaks with restrained warmth and nostalgia. Maintain her airy soprano and delicate delivery, but allow more affection and life into the voice.",
+          "text": "There used to be music in this room every evening. My sisters would dance beside the windows while I played the little piano in the corner. Sometimes, when the moon is bright enough, I can almost hear them again."
+        },
+        {
+          "name": "quiet_urgency",
+          "direction": "The ghost becomes urgently serious without raising her voice much. Slightly quicker pacing and firmer articulation while preserving the soft ethereal character.",
+          "text": "You must leave before the clock strikes twelve. The thing beneath this house wakes when the final bell rings, and once it notices you, locked doors will not matter. Please believe me and go while you still can."
+        }
+      ]
+    },
+    {
+      "slug": "09_cave_troll",
+      "name": "Cave Troll",
+      "description": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.",
+      "dialogs": [
+        {
+          "name": "grumpy_normal",
+          "direction": "The troll speaks in his normal characteristic voice with weary irritation, rough gravel, dry humor, and the sense that visitors are generally an inconvenience.",
+          "text": "Another traveler. Wonderful. Let me guess: cursed treasure, missing princess, mysterious prophecy? Nobody comes to my cave anymore just to have a pleasant conversation. Sit down if you must, but wipe your boots before you ruin the moss."
+        },
+        {
+          "name": "dry_storytelling",
+          "direction": "The troll relaxes into an old storyteller's voice. Keep the gravelly low baritone and slightly nasal quality, but add warmth, patience, and understated amusement.",
+          "text": "There was a wizard here once who claimed he could turn stones into gold. Very impressive trick. Unfortunately, he demonstrated it on the stones holding up my ceiling. That is why I no longer allow wizards to perform indoors."
+        },
+        {
+          "name": "territorial_warning",
+          "direction": "The troll becomes firm and intimidating without roaring. He speaks more slowly with heavier emphasis and unmistakable territorial authority.",
+          "text": "This bridge belongs to me. I built it before your grandfather's grandfather was born, and I have repaired it after every flood since. You may cross if you ask politely. You may not cross by threatening me."
+        }
+      ]
+    },
+    {
+      "slug": "10_ancient_dragon",
+      "name": "Ancient Dragon",
+      "description": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.",
+      "dialogs": [
+        {
+          "name": "regal_conversation",
+          "direction": "The dragon speaks in her natural characteristic voice: calm, regal, resonant, precise, and effortlessly authoritative. She is curious about the listener but never loses her dignity.",
+          "text": "So this is the child everyone has been whispering about. Come closer, little queen. I have watched kingdoms rise and vanish from these mountains, yet somehow your name has traveled farther than armies. I would like to know why."
+        },
+        {
+          "name": "ancient_warmth",
+          "direction": "The dragon speaks more gently, with patient wisdom and subtle affection. Preserve the rich low contralto and regal resonance while allowing warmth and faint amusement into the delivery.",
+          "text": "You remind me of someone I knew many centuries ago. She was small, stubborn, and absolutely convinced every locked door existed specifically for her to open. She caused enormous trouble. I was very fond of her."
+        },
+        {
+          "name": "controlled_displeasure",
+          "direction": "The dragon becomes deeply displeased but remains perfectly controlled. Darken the timbre slightly, strengthen emphasis, and add quiet intensity without shouting or snarling.",
+          "text": "You entered my sanctuary without permission and disturbed something that has slept peacefully for nine hundred years. I will assume this was ignorance rather than disrespect. Explain yourself carefully before I decide whether that assumption was generous."
+        }
+      ]
+    }
+  ]
+}

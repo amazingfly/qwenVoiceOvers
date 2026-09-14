@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ancient Dragon",
+  "voice_slug": "10_ancient_dragon",
+  "seed": 109388,
+  "dialog_name": "controlled_displeasure",
+  "voice_description": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.",
+  "direction": "The dragon becomes deeply displeased but remains perfectly controlled. Darken the timbre slightly, strengthen emphasis, and add quiet intensity without shouting or snarling.",
+  "instruct": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.\n\nFor this line: The dragon becomes deeply displeased but remains perfectly controlled. Darken the timbre slightly, strengthen emphasis, and add quiet intensity without shouting or snarling.",
+  "text": "You entered my sanctuary without permission and disturbed something that has slept peacefully for nine hundred years. I will assume this was ignorance rather than disrespect. Explain yourself carefully before I decide whether that assumption was generous.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

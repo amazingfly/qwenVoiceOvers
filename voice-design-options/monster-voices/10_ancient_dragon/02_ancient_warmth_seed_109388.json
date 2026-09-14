@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ancient Dragon",
+  "voice_slug": "10_ancient_dragon",
+  "seed": 109388,
+  "dialog_name": "ancient_warmth",
+  "voice_description": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.",
+  "direction": "The dragon speaks more gently, with patient wisdom and subtle affection. Preserve the rich low contralto and regal resonance while allowing warmth and faint amusement into the delivery.",
+  "instruct": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.\n\nFor this line: The dragon speaks more gently, with patient wisdom and subtle affection. Preserve the rich low contralto and regal resonance while allowing warmth and faint amusement into the delivery.",
+  "text": "You remind me of someone I knew many centuries ago. She was small, stubborn, and absolutely convinced every locked door existed specifically for her to open. She caused enormous trouble. I was very fond of her.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

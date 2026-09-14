@@ -1,0 +1,17 @@
+{
+  "voice_name": "Orc Warrior",
+  "voice_slug": "05_orc_warrior",
+  "seed": 69793,
+  "dialog_name": "protective_calm",
+  "voice_description": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.",
+  "direction": "The orc speaks more softly and patiently while retaining his deep coarse baritone. He sounds protective and reassuring rather than intimidating.",
+  "instruct": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.\n\nFor this line: The orc speaks more softly and patiently while retaining his deep coarse baritone. He sounds protective and reassuring rather than intimidating.",
+  "text": "You're all right. That cut looks worse than it is. Sit here for a moment and breathe. I've seen warriors twice your size panic over less. Being frightened doesn't matter. What matters is that you got back on your feet.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

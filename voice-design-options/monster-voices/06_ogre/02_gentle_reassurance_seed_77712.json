@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ogre",
+  "voice_slug": "06_ogre",
+  "seed": 77712,
+  "dialog_name": "gentle_reassurance",
+  "voice_description": "A huge middle-aged male ogre with a very deep bass voice, thick heavy resonance, and rough but warm timbre. Slow speech, thoughtful pauses, and slightly clumsy but understandable articulation. Simple, stubborn, physically enormous, and unexpectedly gentle. His identity should come from size, resonance, pacing, and personality rather than exaggerated stupidity.",
+  "direction": "The ogre speaks softly and carefully, trying to reassure someone much smaller. Preserve his huge bass voice but make the delivery warm, patient, and tender.",
+  "instruct": "A huge middle-aged male ogre with a very deep bass voice, thick heavy resonance, and rough but warm timbre. Slow speech, thoughtful pauses, and slightly clumsy but understandable articulation. Simple, stubborn, physically enormous, and unexpectedly gentle. His identity should come from size, resonance, pacing, and personality rather than exaggerated stupidity.\n\nFor this line: The ogre speaks softly and carefully, trying to reassure someone much smaller. Preserve his huge bass voice but make the delivery warm, patient, and tender.",
+  "text": "You don't have to hide behind tree. Ogre knows big teeth look scary, but Ogre is not going to eat anybody. Come sit by fire. There is soup, warm blanket, and enough room on log for one very small queen.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

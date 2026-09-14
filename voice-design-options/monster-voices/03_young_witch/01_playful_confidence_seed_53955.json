@@ -1,0 +1,17 @@
+{
+  "voice_name": "Young Witch",
+  "voice_slug": "03_young_witch",
+  "seed": 53955,
+  "dialog_name": "playful_confidence",
+  "voice_description": "A young adult female witch in her early twenties with a clear lively mezzo-soprano voice, moderately high pitch, smooth youthful timbre, quick expressive intonation, and a subtle breathy quality. Clever, confident, playful, curious, and adventurous. Her voice should work naturally for both ordinary conversation and emotionally charged fantasy dialogue.",
+  "direction": "The young witch speaks in her natural characteristic voice with quick wit, confident energy, and a lightly teasing smile. Animated but conversational rather than theatrical.",
+  "instruct": "A young adult female witch in her early twenties with a clear lively mezzo-soprano voice, moderately high pitch, smooth youthful timbre, quick expressive intonation, and a subtle breathy quality. Clever, confident, playful, curious, and adventurous. Her voice should work naturally for both ordinary conversation and emotionally charged fantasy dialogue.\n\nFor this line: The young witch speaks in her natural characteristic voice with quick wit, confident energy, and a lightly teasing smile. Animated but conversational rather than theatrical.",
+  "text": "Of course I know what I'm doing. Mostly. The spell is perfectly safe as long as nobody sneezes, touches the blue crystal, or asks why the floor is starting to glow. So perhaps we should all remain unusually calm for the next minute.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

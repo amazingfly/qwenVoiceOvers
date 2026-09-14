@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ghost Woman",
+  "voice_slug": "08_ghost_woman",
+  "seed": 93550,
+  "dialog_name": "quiet_urgency",
+  "voice_description": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.",
+  "direction": "The ghost becomes urgently serious without raising her voice much. Slightly quicker pacing and firmer articulation while preserving the soft ethereal character.",
+  "instruct": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.\n\nFor this line: The ghost becomes urgently serious without raising her voice much. Slightly quicker pacing and firmer articulation while preserving the soft ethereal character.",
+  "text": "You must leave before the clock strikes twelve. The thing beneath this house wakes when the final bell rings, and once it notices you, locked doors will not matter. Please believe me and go while you still can.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

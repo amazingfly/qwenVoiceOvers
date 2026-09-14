@@ -1,0 +1,17 @@
+{
+  "voice_name": "Goblin",
+  "voice_slug": "04_goblin",
+  "seed": 61874,
+  "dialog_name": "cautious_suspicion",
+  "voice_description": "A small adult male goblin with a high-pitched wiry slightly nasal voice, thin raspy timbre, quick speech, sharp consonants, and restless expressive energy. Crafty, greedy, suspicious, clever, and easily excited. His voice should be unusual and recognizable but not so squeaky or exaggerated that ordinary dialogue becomes difficult to understand.",
+  "direction": "The goblin lowers his energy and becomes wary and suspicious. Keep the high wiry voice and nasal character, but slow him slightly and make him listen carefully between phrases.",
+  "instruct": "A small adult male goblin with a high-pitched wiry slightly nasal voice, thin raspy timbre, quick speech, sharp consonants, and restless expressive energy. Crafty, greedy, suspicious, clever, and easily excited. His voice should be unusual and recognizable but not so squeaky or exaggerated that ordinary dialogue becomes difficult to understand.\n\nFor this line: The goblin lowers his energy and becomes wary and suspicious. Keep the high wiry voice and nasal character, but slow him slightly and make him listen carefully between phrases.",
+  "text": "Something isn't right. The bats stopped making noise three tunnels ago, and bats never stop making noise. I think we should turn around very quietly and pretend we were never foolish enough to come down here.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

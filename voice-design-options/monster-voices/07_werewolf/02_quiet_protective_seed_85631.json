@@ -1,0 +1,17 @@
+{
+  "voice_name": "Werewolf",
+  "voice_slug": "07_werewolf",
+  "seed": 85631,
+  "dialog_name": "quiet_protective",
+  "voice_description": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.",
+  "direction": "The werewolf speaks softly and reassuringly. Retain the dark rasp and low resonance, but reduce the tension and reveal a protective, surprisingly gentle side.",
+  "instruct": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.\n\nFor this line: The werewolf speaks softly and reassuringly. Retain the dark rasp and low resonance, but reduce the tension and reveal a protective, surprisingly gentle side.",
+  "text": "You can sleep. I'll keep watch until morning. Nothing in these woods will come near the camp while I'm awake. And if you hear something moving beyond the firelight, don't worry. Chances are, it already knows I'm here.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "voice_name": "Cave Troll",
+  "voice_slug": "09_cave_troll",
+  "seed": 101469,
+  "dialog_name": "dry_storytelling",
+  "voice_description": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.",
+  "direction": "The troll relaxes into an old storyteller's voice. Keep the gravelly low baritone and slightly nasal quality, but add warmth, patience, and understated amusement.",
+  "instruct": "An older male cave troll with a low rough baritone voice, thick gravelly timbre, slightly nasal resonance, heavy uneven rhythm, and slow-to-moderate speech. Irritable, suspicious, stubborn, ancient, physically large, and unexpectedly dryly funny. His roughness should remain consistent while allowing ordinary conversation and softer moments.\n\nFor this line: The troll relaxes into an old storyteller's voice. Keep the gravelly low baritone and slightly nasal quality, but add warmth, patience, and understated amusement.",
+  "text": "There was a wizard here once who claimed he could turn stones into gold. Very impressive trick. Unfortunately, he demonstrated it on the stones holding up my ceiling. That is why I no longer allow wizards to perform indoors.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "voice_name": "Orc Warrior",
+  "voice_slug": "05_orc_warrior",
+  "seed": 69793,
+  "dialog_name": "steady_command",
+  "voice_description": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.",
+  "direction": "The orc speaks in his normal characteristic voice with calm battlefield authority. Deep, gravelly, direct, and confident, using short deliberate phrases without unnecessary aggression.",
+  "instruct": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.\n\nFor this line: The orc speaks in his normal characteristic voice with calm battlefield authority. Deep, gravelly, direct, and confident, using short deliberate phrases without unnecessary aggression.",
+  "text": "Stay close and keep your eyes on the ridge. The enemy knows this valley better than we do, so let them make the first mistake. When they move, we move together. Nobody wanders off trying to become a hero.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

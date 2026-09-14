@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ghost Woman",
+  "voice_slug": "08_ghost_woman",
+  "seed": 93550,
+  "dialog_name": "gentle_presence",
+  "voice_description": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.",
+  "direction": "The ghost speaks in her natural characteristic voice: soft, airy, serene, and slightly distant. She is calm and approachable, with quiet sadness beneath the words.",
+  "instruct": "A mysterious adult female ghost with a soft pale airy soprano voice, light breathy timbre, gentle high register, smooth articulation, and delicate phrase endings. Distant, sorrowful, kind, mysterious, and emotionally restrained. Her ghostly identity should come from softness, breathiness, and unusual calm rather than artificial effects or constant whispering.\n\nFor this line: The ghost speaks in her natural characteristic voice: soft, airy, serene, and slightly distant. She is calm and approachable, with quiet sadness beneath the words.",
+  "text": "You can see me, can't you? It has been such a long time since anyone looked directly at me. Please don't be frightened. I have no wish to harm you. I only hoped someone might finally listen.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "voice_name": "Young Witch",
+  "voice_slug": "03_young_witch",
+  "seed": 53955,
+  "dialog_name": "casting_line",
+  "voice_description": "Role: young magical witch with an exaggerated, highly animated fantasy-character voice rather than a conventional young female narrator. Gender: female. Age: early twenties. Persistent vocal posture: bright forward resonance with a slightly pinched magical sharpness and light breath pressure carried through ordinary speech. Pitch: moderately high with unusually agile pitch movement, sudden upward flicks and quick melodic drops. Resonance: bright face-forward resonance with light chest support. Timbre: sparkling, breathy, slightly sharp, youthful and faintly mischievous. Phonation: flexible and energetic with occasional airy onset, tiny vocal catches and playful creaky endings. Breathing: quick excited inhales and little amused exhalations when something surprises her. Articulation: crisp, rapid consonants and lively vowel changes. Prosody: highly animated timing, sudden emphasis, little pauses of discovery and quick shifts between curiosity and confidence. Personality: clever, fearless, playful, mischievous and fascinated by magic. Important: maintain a distinct stylized fantasy-witch personality in the actual sound of the voice, not merely in acting emotion. Avoid a polished generic audiobook voice.",
+  "direction": "Speak with delighted magical curiosity and quick expressive changes. Include a tiny surprised breath or vocal catch when noticing the strange magic. Keep the voice strongly characterful but natural enough for recurring dialogue.",
+  "instruct": "Role: young magical witch with an exaggerated, highly animated fantasy-character voice rather than a conventional young female narrator. Gender: female. Age: early twenties. Persistent vocal posture: bright forward resonance with a slightly pinched magical sharpness and light breath pressure carried through ordinary speech. Pitch: moderately high with unusually agile pitch movement, sudden upward flicks and quick melodic drops. Resonance: bright face-forward resonance with light chest support. Timbre: sparkling, breathy, slightly sharp, youthful and faintly mischievous. Phonation: flexible and energetic with occasional airy onset, tiny vocal catches and playful creaky endings. Breathing: quick excited inhales and little amused exhalations when something surprises her. Articulation: crisp, rapid consonants and lively vowel changes. Prosody: highly animated timing, sudden emphasis, little pauses of discovery and quick shifts between curiosity and confidence. Personality: clever, fearless, playful, mischievous and fascinated by magic. Important: maintain a distinct stylized fantasy-witch personality in the actual sound of the voice, not merely in acting emotion. Avoid a polished generic audiobook voice.\n\nFor this line: Speak with delighted magical curiosity and quick expressive changes. Include a tiny surprised breath or vocal catch when noticing the strange magic. Keep the voice strongly characterful but natural enough for recurring dialogue.",
+  "text": "Oh! Wait, that's interesting. The spell is definitely not supposed to glow purple, and I'm almost certain the floor wasn't breathing a moment ago. Hmm... don't worry. This is either an incredible discovery or a very educational disaster.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ancient Demon",
+  "voice_slug": "01_ancient_demon",
+  "seed": 38117,
+  "dialog_name": "dark_amusement",
+  "voice_description": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.",
+  "direction": "The demon sounds genuinely amused and intrigued. Keep the same deep resonant voice and deliberate pacing, but add restrained warmth, dry humor, and a subtle smile rather than overt laughter.",
+  "instruct": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.\n\nFor this line: The demon sounds genuinely amused and intrigued. Keep the same deep resonant voice and deliberate pacing, but add restrained warmth, dry humor, and a subtle smile rather than overt laughter.",
+  "text": "You actually stole the key from my guardian? I must admit, that is considerably more impressive than I expected. Perhaps I underestimated you. That happens very rarely, little queen, so enjoy the accomplishment while you still have time.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

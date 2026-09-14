@@ -1,0 +1,17 @@
+{
+  "voice_name": "Werewolf",
+  "voice_slug": "07_werewolf",
+  "seed": 85631,
+  "dialog_name": "restrained_threat",
+  "voice_description": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.",
+  "direction": "The werewolf becomes intensely threatening without growling heavily or shouting. Darker tone, stronger chest resonance, careful pauses, and tightly controlled anger.",
+  "instruct": "An adult male werewolf with a low tense baritone voice, dark breathy rasp, strong chest resonance, slightly rough edges, and a subtle restrained animalistic quality. Alert, intense, predatory, protective, and constantly maintaining self-control. His speech should sound fundamentally human and versatile, with the wolfish character remaining underneath rather than dominating every line.\n\nFor this line: The werewolf becomes intensely threatening without growling heavily or shouting. Darker tone, stronger chest resonance, careful pauses, and tightly controlled anger.",
+  "text": "Walk away. I am asking nicely because there are children behind me, and I would prefer they not see what happens next. Take your men, take your weapons, and leave this forest while that choice still belongs to you.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

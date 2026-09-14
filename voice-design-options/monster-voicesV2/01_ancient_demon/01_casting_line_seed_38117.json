@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ancient Demon",
+  "voice_slug": "01_ancient_demon",
+  "seed": 38117,
+  "dialog_name": "casting_line",
+  "voice_description": "Role: ancient non-human demon, performed fantasy creature voice. Gender: male. Age: ancient but physically powerful, never frail. Pitch: extremely low bass register, deliberately below an ordinary conversational male range, with mostly low and stable pitch. Resonance: enormous chest and throat resonance with a cavernous, hollow-bodied quality. Timbre: dark, smoky, coarse, gravelly, creaky and heavy. Phonation: dense, compressed and slightly strained, with a subtle rumbling undertone throughout the voice. Articulation: broad vowels and heavy consonants, clearly intelligible but sounding physically weighty. Speed: slow and deliberate. Prosody: long phrase endings, strong downward inflections and measured dramatic pauses. Tone: predatory, ancient, intelligent and quietly terrifying. Important: deliberately perform an unnatural fantasy demon voice. It should sound substantially non-human and physically enormous, not merely like a normal man with a deep narrator voice.",
+  "direction": "Speak with calm menace and restrained dark amusement at a strong conversational volume. Do not shout. Let the unnatural bass resonance, rough texture and immense physical weight of the voice carry the threat.",
+  "instruct": "Role: ancient non-human demon, performed fantasy creature voice. Gender: male. Age: ancient but physically powerful, never frail. Pitch: extremely low bass register, deliberately below an ordinary conversational male range, with mostly low and stable pitch. Resonance: enormous chest and throat resonance with a cavernous, hollow-bodied quality. Timbre: dark, smoky, coarse, gravelly, creaky and heavy. Phonation: dense, compressed and slightly strained, with a subtle rumbling undertone throughout the voice. Articulation: broad vowels and heavy consonants, clearly intelligible but sounding physically weighty. Speed: slow and deliberate. Prosody: long phrase endings, strong downward inflections and measured dramatic pauses. Tone: predatory, ancient, intelligent and quietly terrifying. Important: deliberately perform an unnatural fantasy demon voice. It should sound substantially non-human and physically enormous, not merely like a normal man with a deep narrator voice.\n\nFor this line: Speak with calm menace and restrained dark amusement at a strong conversational volume. Do not shout. Let the unnatural bass resonance, rough texture and immense physical weight of the voice carry the threat.",
+  "text": "So, little queen, you finally opened my gate. I have watched kingdoms rise, crumble, and vanish while I waited beneath this mountain. Come closer. I would very much like to see what sort of creature was foolish enough to wake me.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

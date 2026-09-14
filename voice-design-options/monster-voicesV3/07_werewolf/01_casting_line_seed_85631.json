@@ -1,0 +1,17 @@
+{
+  "voice_name": "Werewolf",
+  "voice_slug": "07_werewolf",
+  "seed": 85631,
+  "dialog_name": "casting_line",
+  "voice_description": "Role: werewolf capable of human language, with an unmistakably animal-shaped speaking voice. Gender: male. Age: mature adult. Persistent vocal posture: tense throat, partially clenched jaw and chest-driven breath pressure throughout all speech, as though human words are being forced through predatory anatomy. Pitch: low baritone with frequent dark dips and restrained rough undertones. Resonance: chest-heavy with tense pharyngeal throat resonance. Timbre: dark, breathy, raspy, feral, rough and slightly growling even when calm. Phonation: compressed with vocal fry, intermittent throat vibration and a subtle low rumble under sustained vowels. Breathing: clearly audible predatory inhalations through the nose, low exhalations and occasional restrained huffs. Articulation: clear words but with heavier consonants, slightly elongated dark vowels and a tight-jawed quality. Prosody: alert pauses, sudden emphasis and restrained melodic range. Personality: vigilant, dangerous, protective and constantly controlling animal instinct. Important: the wolfish quality must persist through normal speech. Do not simply make a raspy action-hero voice.",
+  "direction": "Speak quietly and intensely with animal tension under every word. Include one audible sniffing inhale or restrained low huff before identifying the danger. Do not fully growl; the voice should sound as though a growl is permanently just beneath the speech.",
+  "instruct": "Role: werewolf capable of human language, with an unmistakably animal-shaped speaking voice. Gender: male. Age: mature adult. Persistent vocal posture: tense throat, partially clenched jaw and chest-driven breath pressure throughout all speech, as though human words are being forced through predatory anatomy. Pitch: low baritone with frequent dark dips and restrained rough undertones. Resonance: chest-heavy with tense pharyngeal throat resonance. Timbre: dark, breathy, raspy, feral, rough and slightly growling even when calm. Phonation: compressed with vocal fry, intermittent throat vibration and a subtle low rumble under sustained vowels. Breathing: clearly audible predatory inhalations through the nose, low exhalations and occasional restrained huffs. Articulation: clear words but with heavier consonants, slightly elongated dark vowels and a tight-jawed quality. Prosody: alert pauses, sudden emphasis and restrained melodic range. Personality: vigilant, dangerous, protective and constantly controlling animal instinct. Important: the wolfish quality must persist through normal speech. Do not simply make a raspy action-hero voice.\n\nFor this line: Speak quietly and intensely with animal tension under every word. Include one audible sniffing inhale or restrained low huff before identifying the danger. Do not fully growl; the voice should sound as though a growl is permanently just beneath the speech.",
+  "text": "Wait... I smell something. We're being followed. Don't turn around. Whoever it is has stayed downwind since sunset, which means they know exactly what I am. Keep walking until we reach the stones. If they come closer... I'll handle it.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

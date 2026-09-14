@@ -1,0 +1,34 @@
+{
+  "voices": [
+    {
+      "slug": "01_bright_little_queen",
+      "name": "Bright Little Queen",
+      "description": "A young female storybook heroine with a clear, bright, naturally youthful voice. Curious, clever, cheerful and adventurous. Medium-high pitch, expressive melodic intonation, crisp speech, and genuine excitement without sounding exaggerated or cartoonish. She should sound like a brave little queen who is always ready to discover something magical."
+    },
+    {
+      "slug": "02_gentle_mermaid_princess",
+      "name": "Gentle Mermaid Princess",
+      "description": "A young female fantasy character with a soft, beautiful, warm voice. Light and clear with a slightly airy quality, gentle melodic intonation, and an affectionate sense of wonder. Calm but not sleepy. She should sound like a kind mermaid princess exploring a magical underwater kingdom."
+    },
+    {
+      "slug": "03_bold_adventure_queen",
+      "name": "Bold Adventure Queen",
+      "description": "A youthful female fantasy heroine with a lively, confident voice. Clear mid-to-high register, energetic but natural, quick emotional reactions, strong curiosity, and a little fearless determination. She should sound like a young queen who leads her friends into adventures and believes they can solve whatever problem they encounter."
+    },
+    {
+      "slug": "04_mischievous_fairy_queen",
+      "name": "Mischievous Fairy Queen",
+      "description": "A youthful female magical character with a light, nimble, playful voice. Bright tone, lively rhythm, expressive pitch changes, quick wit, and a hint of harmless mischief. Warm and lovable rather than shrill. She should sound like a tiny fairy queen who is clever, funny, and constantly thinking of another magical idea."
+    },
+    {
+      "slug": "05_dreamy_moon_mermaid",
+      "name": "Dreamy Moon Mermaid",
+      "description": "A young female fantasy voice with a smooth, luminous, slightly dreamy tone. Soft but clearly articulated, with gentle rises and falls in pitch and a mysterious sense of wonder. Emotionally expressive and intimate, as though she knows secrets about moonlight, oceans, and hidden magical places."
+    },
+    {
+      "slug": "06_warm_storybook_heroine",
+      "name": "Warm Storybook Heroine",
+      "description": "A youthful female lead character with a warm, friendly, natural speaking voice. Clear and expressive with moderate pitch, relaxed pacing, strong emotional range, and an immediately likable personality. She should sound believable during ordinary conversation but become animated naturally when something exciting or magical happens."
+    }
+  ]
+}

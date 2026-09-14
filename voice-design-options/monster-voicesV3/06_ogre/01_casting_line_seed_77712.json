@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ogre",
+  "voice_slug": "06_ogre",
+  "seed": 77712,
+  "dialog_name": "casting_line",
+  "voice_description": "Role: enormous non-human ogre with a deliberately oversized animated creature voice. Gender: male. Age: middle-aged adult creature. Persistent vocal posture: mouth and throat feel physically huge and slow, as though every syllable is being formed by a creature several times human size. Pitch: exceptionally low bass with slow heavy pitch movement. Resonance: gigantic hollow chest resonance, thick throat resonance and rounded mouth resonance. Timbre: booming, thick, muddy, rough, warm, rounded and slightly gravelly. Phonation: heavy, loose and slow with occasional low creak or rumbling onset. Breathing: very large slow breaths, occasional nasal huffs and audible effort before longer phrases. Articulation: oversized rounded vowels, softened consonants and slow cumbersome mouth movements while remaining intelligible. Prosody: long thoughtful pauses and simple broad emphasis. Personality: stubborn, sincere, slightly confused, physically powerful and unexpectedly sweet. Important: the voice should imply gigantic anatomy. Avoid a normal bass human voice and avoid making him merely stupid or comedic.",
+  "direction": "Speak slowly with enormous physical vocal weight. Use a large thoughtful breath and one small puzzled grunt. Keep the creature voice warm rather than threatening.",
+  "instruct": "Role: enormous non-human ogre with a deliberately oversized animated creature voice. Gender: male. Age: middle-aged adult creature. Persistent vocal posture: mouth and throat feel physically huge and slow, as though every syllable is being formed by a creature several times human size. Pitch: exceptionally low bass with slow heavy pitch movement. Resonance: gigantic hollow chest resonance, thick throat resonance and rounded mouth resonance. Timbre: booming, thick, muddy, rough, warm, rounded and slightly gravelly. Phonation: heavy, loose and slow with occasional low creak or rumbling onset. Breathing: very large slow breaths, occasional nasal huffs and audible effort before longer phrases. Articulation: oversized rounded vowels, softened consonants and slow cumbersome mouth movements while remaining intelligible. Prosody: long thoughtful pauses and simple broad emphasis. Personality: stubborn, sincere, slightly confused, physically powerful and unexpectedly sweet. Important: the voice should imply gigantic anatomy. Avoid a normal bass human voice and avoid making him merely stupid or comedic.\n\nFor this line: Speak slowly with enormous physical vocal weight. Use a large thoughtful breath and one small puzzled grunt. Keep the creature voice warm rather than threatening.",
+  "text": "Hmm... Ogre thinks little bridge may have problem. Bridge is small. Ogre is... very much not small. Maybe we find another road before everybody learns what happens when extremely large ogre and extremely small bridge disagree.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "voice_name": "Goblin",
+  "voice_slug": "04_goblin",
+  "seed": 61874,
+  "dialog_name": "annoyed_excitement",
+  "voice_description": "A small adult male goblin with a high-pitched wiry slightly nasal voice, thin raspy timbre, quick speech, sharp consonants, and restless expressive energy. Crafty, greedy, suspicious, clever, and easily excited. His voice should be unusual and recognizable but not so squeaky or exaggerated that ordinary dialogue becomes difficult to understand.",
+  "direction": "The goblin becomes animated and indignant, speaking faster with stronger emphasis, but do not push into screaming or cartoonish squealing. Keep the underlying voice stable.",
+  "instruct": "A small adult male goblin with a high-pitched wiry slightly nasal voice, thin raspy timbre, quick speech, sharp consonants, and restless expressive energy. Crafty, greedy, suspicious, clever, and easily excited. His voice should be unusual and recognizable but not so squeaky or exaggerated that ordinary dialogue becomes difficult to understand.\n\nFor this line: The goblin becomes animated and indignant, speaking faster with stronger emphasis, but do not push into screaming or cartoonish squealing. Keep the underlying voice stable.",
+  "text": "You opened the chest without me? I spent three days finding that chest! I crawled through mud, spiders, and one extremely rude mushroom for that treasure. At the very least, I deserve first choice of anything unnecessarily shiny.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

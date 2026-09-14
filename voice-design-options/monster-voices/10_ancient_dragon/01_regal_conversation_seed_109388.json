@@ -1,0 +1,17 @@
+{
+  "voice_name": "Ancient Dragon",
+  "voice_slug": "10_ancient_dragon",
+  "seed": 109388,
+  "dialog_name": "regal_conversation",
+  "voice_description": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.",
+  "direction": "The dragon speaks in her natural characteristic voice: calm, regal, resonant, precise, and effortlessly authoritative. She is curious about the listener but never loses her dignity.",
+  "instruct": "An ancient female dragon with a deep contralto voice, exceptionally rich resonance, smooth dark timbre, and subtle smoky roughness. Low pitch for a female speaker, precise articulation, regal pacing, enormous calm authority, intelligence, pride, patience, and restrained danger. Her voice should remain elegant and recognizable across warmth, amusement, and anger.\n\nFor this line: The dragon speaks in her natural characteristic voice: calm, regal, resonant, precise, and effortlessly authoritative. She is curious about the listener but never loses her dignity.",
+  "text": "So this is the child everyone has been whispering about. Come closer, little queen. I have watched kingdoms rise and vanish from these mountains, yet somehow your name has traveled farther than armies. I would like to know why.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

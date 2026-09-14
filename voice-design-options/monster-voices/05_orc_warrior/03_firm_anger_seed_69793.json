@@ -1,0 +1,17 @@
+{
+  "voice_name": "Orc Warrior",
+  "voice_slug": "05_orc_warrior",
+  "seed": 69793,
+  "dialog_name": "firm_anger",
+  "voice_description": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.",
+  "direction": "The orc becomes strongly angry but controlled. Increase vocal force and gravelly emphasis without roaring or shouting. He sounds dangerous because he is restraining himself.",
+  "instruct": "A large adult male orc warrior with a deep baritone voice, broad chest resonance, coarse gravelly timbre, firm articulation, and strong physical presence. Blunt, fearless, practical, impatient, and battle-hardened. Powerful and intimidating without needing to shout. The roughness should remain natural enough for warm, quiet, and forceful speech.\n\nFor this line: The orc becomes strongly angry but controlled. Increase vocal force and gravelly emphasis without roaring or shouting. He sounds dangerous because he is restraining himself.",
+  "text": "You were told to leave the village alone. I gave you that choice because I prefer solving problems without bloodshed. If you cross that bridge again, you will discover exactly how much patience I was showing you.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}

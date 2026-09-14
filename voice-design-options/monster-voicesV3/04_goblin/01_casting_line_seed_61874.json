@@ -1,0 +1,17 @@
+{
+  "voice_name": "Goblin",
+  "voice_slug": "04_goblin",
+  "seed": 61874,
+  "dialog_name": "casting_line",
+  "voice_description": "Role: small non-human goblin with an aggressively shaped classic animated creature voice. Gender: male. Age: adult creature. Persistent vocal posture: keep the throat tight, jaw slightly clenched and sound strongly focused through the nose and front of the mouth during every word. Pitch: unnaturally high male register with abrupt squeaky peaks, cracks and sharp downward drops. Resonance: intensely nasal, tiny, throat-forward and almost completely lacking in chest weight. Timbre: wiry, reedy, scratchy, pinched, dry and slightly squeaky. Phonation: compressed, strained and restless, with tiny creaks and occasional raspy catches. Breathing: short snuffling nasal inhales, quick huffs and little greedy snorts between phrases. Articulation: clipped syllables, extremely sharp consonants, quick tongue movement and exaggerated mouth shapes. Prosody: twitchy, irregular, unpredictable pitch jumps and rapid changes in speed. Personality: greedy, clever, suspicious, energetic, cowardly and mischievous. Important: this should immediately sound like a small non-human goblin even during ordinary speech. Do not produce merely a nasal young man or cute cartoon child voice.",
+  "direction": "Speak rapidly with greedy excitement. Add one or two small snuffling or snorting breaths between thoughts and use sudden pitch jumps. Do not scream; the persistent nasal, compressed, wiry vocal posture should create the creature identity.",
+  "instruct": "Role: small non-human goblin with an aggressively shaped classic animated creature voice. Gender: male. Age: adult creature. Persistent vocal posture: keep the throat tight, jaw slightly clenched and sound strongly focused through the nose and front of the mouth during every word. Pitch: unnaturally high male register with abrupt squeaky peaks, cracks and sharp downward drops. Resonance: intensely nasal, tiny, throat-forward and almost completely lacking in chest weight. Timbre: wiry, reedy, scratchy, pinched, dry and slightly squeaky. Phonation: compressed, strained and restless, with tiny creaks and occasional raspy catches. Breathing: short snuffling nasal inhales, quick huffs and little greedy snorts between phrases. Articulation: clipped syllables, extremely sharp consonants, quick tongue movement and exaggerated mouth shapes. Prosody: twitchy, irregular, unpredictable pitch jumps and rapid changes in speed. Personality: greedy, clever, suspicious, energetic, cowardly and mischievous. Important: this should immediately sound like a small non-human goblin even during ordinary speech. Do not produce merely a nasal young man or cute cartoon child voice.\n\nFor this line: Speak rapidly with greedy excitement. Add one or two small snuffling or snorting breaths between thoughts and use sudden pitch jumps. Do not scream; the persistent nasal, compressed, wiry vocal posture should create the creature identity.",
+  "text": "Gold? Hnh! You should have mentioned gold first! I know the tunnel, I know the lock, and I even know which dragon sleeps through thunderstorms. Mm-hm... for a modest fee, naturally, I could make all of us extraordinarily rich.",
+  "generation": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 40,
+    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "dtype": "bfloat16"
+  }
+}
