@@ -1,0 +1,117 @@
+{
+  "story": {
+    "title": "The Little Queen and the Ancient Gate",
+    "language": "English",
+    "output_dir": "story-voiceovers/little_queen_gate"
+  },
+
+  "model": {
+    "path": "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "device_map": "cpu",
+    "dtype": "bfloat16",
+    "threads": 6
+  },
+
+  "defaults": {
+    "temperature": 0.80,
+    "top_p": 0.90,
+    "top_k": 40,
+    "max_new_tokens": 1024,
+    "seed_strategy": "per_speaker",
+    "base_seed": 38117,
+    "seed_step": 7919
+  },
+
+  "speakers": {
+    "queen": {
+      "name": "Bright Little Queen",
+      "description": "A young female storybook heroine with a clear, bright, naturally youthful voice. Curious, clever, cheerful and adventurous. Medium-high pitch, expressive melodic intonation, crisp speech, and genuine excitement without sounding exaggerated or cartoonish. She should sound like a brave little queen who is always ready to discover something magical.",
+      "seed": 38117
+    },
+    "demon": {
+      "name": "Ancient Demon",
+      "description": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.",
+      "seed": 52841
+    },
+    "narrator": {
+      "name": "Story Narrator",
+      "description": "A warm, clear, neutral adult narrator voice. Calm, slightly rich, excellent diction, moderate pace. Feels like a classic storybook reading without becoming theatrical.",
+      "seed": 74629
+    }
+  },
+
+  "lines": [
+    {
+      "id": "001",
+      "speaker": "narrator",
+      "direction": "Calm opening narration with a slight sense of wonder and mystery.",
+      "text": "Once, beneath a mountain that no map dared to name, a forgotten gate waited for someone brave enough to open it."
+    },
+    {
+      "id": "002",
+      "speaker": "narrator",
+      "direction": "Slightly more intimate, drawing the listener closer.",
+      "text": "The key had been hidden for three hundred years. Tonight, a little queen held it in her hand."
+    },
+    {
+      "id": "003",
+      "speaker": "queen",
+      "direction": "Curious and a little nervous, but determined. Soft volume, genuine wonder.",
+      "text": "The key is warm. Why is the key warm?"
+    },
+    {
+      "id": "004",
+      "speaker": "queen",
+      "direction": "Quiet resolve. She is speaking more to herself than to anyone else.",
+      "text": "If something has been waiting this long, then it must be important. I am not turning back."
+    },
+    {
+      "id": "005",
+      "speaker": "narrator",
+      "direction": "Building tension. The gate is about to open.",
+      "text": "She pressed the key into the ancient lock. Stone ground against stone. Cold air rushed out of the dark."
+    },
+    {
+      "id": "006",
+      "speaker": "demon",
+      "direction": "Slow, deep, amused. Let a low throat sound sit under the first words. Completely in control.",
+      "text": "Hmph... so, little queen, you finally opened my gate."
+    },
+    {
+      "id": "007",
+      "speaker": "demon",
+      "direction": "Dark amusement mixed with genuine curiosity. Still calm and heavy.",
+      "text": "I have watched kingdoms rise, rot, and disappear while I waited beneath this mountain. Come closer. I want to see what sort of creature was foolish enough to wake me."
+    },
+    {
+      "id": "008",
+      "speaker": "queen",
+      "direction": "Brave, slightly defiant, still keeping her bright youthful character. Clear and steady.",
+      "text": "I didn't come to wake you. I came because something under this mountain is calling for help."
+    },
+    {
+      "id": "009",
+      "speaker": "demon",
+      "direction": "Genuine surprise held under centuries of arrogance. A short low breath before speaking.",
+      "text": "Help? How interesting. In all the centuries I have slept, no one has ever claimed they came to help me."
+    },
+    {
+      "id": "010",
+      "speaker": "queen",
+      "direction": "Earnest and a little fierce. Her courage is real even if she is small.",
+      "text": "Then maybe you have been waiting for the wrong kind of visitor. I am not here to take anything from you. I am here to listen."
+    },
+    {
+      "id": "011",
+      "speaker": "demon",
+      "direction": "Quiet, heavy consideration. The amusement softens into something older and more serious.",
+      "text": "Listen... Very well, little queen. Step into the light where I can see your face. If you are telling the truth, the mountain itself will know."
+    },
+    {
+      "id": "012",
+      "speaker": "narrator",
+      "direction": "Soft closing of the scene. A sense that something important has begun.",
+      "text": "And so the little queen walked forward, into the dark that had waited for her, and the ancient gate closed behind them both."
+    }
+  ]
+}
