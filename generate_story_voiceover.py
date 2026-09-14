@@ -10,9 +10,11 @@ Supports:
 - Every line is generated separately.
 - Resume support: skips lines that already have a valid WAV.
 - Per-line config overrides are supported.
-- Story-level progress: % done, sec/line, ETA.
-- Per-line inference progress via HF StoppingCriteria (steps, %, sec/step, ETA).
+- After each line: audio length, process time, RTF, N/M done, avg, ETA.
 - Checks requirements and runs setup_qwen_voiceover.sh if needed.
+
+Note: Qwen3-TTS does not expose reliable mid-inference step callbacks in the
+public generate_* API, so we only report stats after each line completes.
 """
 
 import argparse
@@ -189,7 +191,7 @@ def resolve_path(root: Path, path_str: str) -> Path:
 
 
 def format_duration(seconds: float) -> str:
-    if seconds < 0 or seconds != seconds:
+    if seconds is None or seconds < 0 or seconds != seconds:
         return "--:--"
     seconds = int(round(seconds))
     h, rem = divmod(seconds, 3600)
@@ -201,81 +203,52 @@ def format_duration(seconds: float) -> str:
     return f"{s:d}s"
 
 
-def render_progress(done: int, total: int, avg_sec: float, bar_width: int = 28) -> str:
-    if total <= 0:
-        pct = 100.0
-        filled = bar_width
-    else:
-        pct = 100.0 * done / total
-        filled = int(bar_width * done / total)
-
-    bar = "█" * filled + "░" * (bar_width - filled)
+def print_line_stats(
+    *,
+    ok: bool,
+    done: int,
+    total: int,
+    audio_sec: float | None,
+    wall_sec: float,
+    times: list[float],
+    wav_path: Path | None = None,
+    sample_rate: int | None = None,
+):
+    """Clear multi-line stats after each inference attempt."""
+    avg = (sum(times) / len(times)) if times else 0.0
     remaining = max(total - done, 0)
-    eta = avg_sec * remaining if avg_sec > 0 else 0.0
+    eta = avg * remaining if avg > 0 else 0.0
+    pct = (100.0 * done / total) if total else 100.0
 
-    return (
-        f"[{bar}] {pct:5.1f}%  "
-        f"{done}/{total}  "
-        f"{avg_sec:6.1f}s/line  "
-        f"ETA {format_duration(eta)}"
+    status = "OK" if ok else "FAIL"
+    print(f"  result:     {status}")
+    if ok and audio_sec is not None:
+        rtf = (wall_sec / audio_sec) if audio_sec > 0 else 0.0
+        print(f"  track:      {audio_sec:.2f}s audio", end="")
+        if sample_rate:
+            print(f"  @ {sample_rate} Hz", end="")
+        print()
+        print(f"  process:    {wall_sec:.1f}s wall  (RTF {rtf:.2f}x)")
+    else:
+        print(f"  process:    {wall_sec:.1f}s wall")
+
+    if wav_path is not None and ok:
+        try:
+            size_kb = wav_path.stat().st_size / 1024.0
+            print(f"  file:       {wav_path.name}  ({size_kb:.0f} KB)")
+        except OSError:
+            print(f"  file:       {wav_path.name}")
+
+    print(
+        f"  progress:   {done}/{total} done  ({pct:.0f}%)  |  "
+        f"avg {avg:.1f}s/line  |  ETA {format_duration(eta)}"
     )
-
-
-def make_step_progress_criteria(max_new_tokens: int, report_every: int = 5):
-    """
-    Build HF StoppingCriteria that reports codec-step progress during generate().
-
-    qwen_tts forwards **kwargs to Transformers generate(), so this is the
-    supported way to observe per-step progress. Generation often ends early
-    on EOS, so max_new_tokens is an upper bound (progress may jump to done).
-    Returns (criteria_list_or_None, progress_state_dict).
-    """
-    try:
-        from transformers import StoppingCriteria, StoppingCriteriaList
-    except ImportError:
-        return None, {"supported": False, "steps": 0}
-
-    state = {
-        "supported": True,
-        "steps": 0,
-        "max_new_tokens": max_new_tokens,
-        "t0": None,
-    }
-
-    class _StepProgress(StoppingCriteria):
-        def __init__(self):
-            self.step = 0
-            self.t0 = time.monotonic()
-            state["t0"] = self.t0
-
-        def __call__(self, input_ids, scores, **kwargs):
-            self.step += 1
-            state["steps"] = self.step
-            max_tok = max(max_new_tokens, 1)
-
-            if self.step == 1 or self.step % report_every == 0 or self.step >= max_tok:
-                elapsed = time.monotonic() - self.t0
-                sec_per_step = elapsed / self.step if self.step else 0.0
-                remaining = max(max_tok - self.step, 0)
-                eta = sec_per_step * remaining
-                pct = min(100.0 * self.step / max_tok, 100.0)
-                bar_w = 24
-                filled = int(bar_w * self.step / max_tok)
-                filled = min(filled, bar_w)
-                bar = "█" * filled + "░" * (bar_w - filled)
-                # carriage-return update on one line
-                msg = (
-                    f"\r  infer [{bar}] {pct:5.1f}%  "
-                    f"step {self.step}/{max_tok}  "
-                    f"{sec_per_step:5.2f}s/step  "
-                    f"ETA {format_duration(eta)}   "
-                )
-                sys.stdout.write(msg)
-                sys.stdout.flush()
-
-            return False  # never stop early; only report
-
-    return StoppingCriteriaList([_StepProgress()]), state
+    if times:
+        total_audio = None  # not tracked globally here
+        print(
+            f"  session:    {format_duration(sum(times))} gen time so far"
+        )
+    print(flush=True)
 
 
 # ---------------------------------------------------------------------------
@@ -295,12 +268,6 @@ def main():
         "--skip-setup",
         action="store_true",
         help="Do not auto-run setup_qwen_voiceover.sh if requirements are missing",
-    )
-    parser.add_argument(
-        "--step-report-every",
-        type=int,
-        default=5,
-        help="Print inference step progress every N codec steps (default: 5)",
     )
     args = parser.parse_args()
 
@@ -448,8 +415,7 @@ def main():
     print(f"Output:     {OUTPUT_DIR}")
     print(f"Mode:       {mode}")
     print(f"Model:      {model_path}")
-    print(f"Lines:      {len(lines)}")
-    print(f"Remaining:  {total_work}")
+    print(f"Lines:      {len(lines)} total, {total_work} remaining")
     print(f"Threads:    {torch.get_num_threads()}")
     print()
 
@@ -457,21 +423,21 @@ def main():
         print("All lines already generated. Nothing to do.")
         return
 
-    print("Loading model (this happens only once)...")
+    print("Loading model (this happens only once)...", flush=True)
     t0 = time.monotonic()
     model = Qwen3TTSModel.from_pretrained(
         model_path,
         device_map=device_map,
         dtype=dtype,
     )
-    print(f"Model loaded in {time.monotonic() - t0:.1f}s")
-    print()
-    print(render_progress(0, total_work, 0.0))
-    sys.stdout.flush()
+    print(f"Model loaded in {time.monotonic() - t0:.1f}s", flush=True)
+    print(flush=True)
 
-    times = []
+    times: list[float] = []
+    audio_totals: list[float] = []
     done_count = 0
-    step_progress_warned = False
+    ok_count = 0
+    fail_count = 0
 
     try:
         for work_index, (i, line) in enumerate(work):
@@ -484,11 +450,8 @@ def main():
             seed = get_line_seed(line, speaker, defaults, i)
             text = line["text"].strip()
             if not text:
-                print(f"\nSKIP empty text on line {lid}")
+                print(f"SKIP empty text on line {lid}", flush=True)
                 done_count += 1
-                avg = (sum(times) / len(times)) if times else 0.0
-                print(render_progress(done_count, total_work, avg))
-                sys.stdout.flush()
                 continue
 
             filename = f"{lid}_{slugify(speaker_key)}_seed_{seed}.wav"
@@ -535,42 +498,25 @@ def main():
                 encoding="utf-8",
             )
 
-            print()
             print("-" * 60)
-            print(f"Line {lid}  |  {speaker.get('name', speaker_key)}  [{mode}]")
+            print(f"[{work_index + 1}/{total_work}]  Line {lid}  |  {speaker.get('name', speaker_key)}  [{mode}]")
             print(f"Seed: {seed}")
             if mode == "clone":
                 print(f"Ref:  {speaker['ref_audio']}")
-            print(f"Direction: {line.get('direction', '')}")
+            if line.get("direction"):
+                print(f"Direction: {line.get('direction')}")
             print(f"Text: {text}")
-            print("-" * 60)
-            sys.stdout.flush()
+            print("Generating...", flush=True)
 
             random.seed(seed)
             np.random.seed(seed)
             torch.manual_seed(seed)
 
-            step_criteria, step_state = make_step_progress_criteria(
-                max_tokens,
-                report_every=max(1, args.step_report_every),
-            )
-            gen_kwargs = dict(
-                do_sample=True,
-                temperature=temp,
-                top_p=top_p,
-                top_k=top_k,
-                max_new_tokens=max_tokens,
-            )
-            if step_criteria is not None:
-                gen_kwargs["stopping_criteria"] = step_criteria
-            elif not step_progress_warned:
-                print(
-                    "(Per-step progress unavailable: transformers StoppingCriteria not found)",
-                    flush=True,
-                )
-                step_progress_warned = True
-
             started = time.monotonic()
+            audio_sec = None
+            sample_rate = None
+            ok = False
+
             try:
                 with torch.inference_mode():
                     if mode == "clone":
@@ -579,86 +525,48 @@ def main():
                             language=LANGUAGE,
                             ref_audio=ref_audio,
                             ref_text=ref_text,
-                            **gen_kwargs,
+                            do_sample=True,
+                            temperature=temp,
+                            top_p=top_p,
+                            top_k=top_k,
+                            max_new_tokens=max_tokens,
                         )
                     else:
                         wavs, sample_rate = model.generate_voice_design(
                             text=text,
                             language=LANGUAGE,
                             instruct=instruct,
-                            **gen_kwargs,
+                            do_sample=True,
+                            temperature=temp,
+                            top_p=top_p,
+                            top_k=top_k,
+                            max_new_tokens=max_tokens,
                         )
-
-                # finish the infer progress line
-                if step_state.get("steps", 0) > 0:
-                    sys.stdout.write("\n")
-                    sys.stdout.flush()
 
                 wav = wavs[0]
                 sf.write(output_path, wav, sample_rate)
-                duration = len(wav) / float(sample_rate)
-                elapsed = time.monotonic() - started
-                times.append(elapsed)
-
-                steps = step_state.get("steps", 0)
-                if steps > 0:
-                    print(
-                        f"DONE  {duration:.2f}s audio  |  {elapsed:.1f}s wall  |  "
-                        f"{steps} steps  |  {elapsed/steps:.2f}s/step"
-                    )
-                else:
-                    print(f"DONE  {duration:.2f}s audio  |  {elapsed:.1f}s wall")
-            except TypeError as exc:
-                # Older path may reject stopping_criteria — retry once without it
-                if step_criteria is not None and "stopping_criteria" in str(exc):
-                    if not step_progress_warned:
-                        print(
-                            "\n(Model rejected stopping_criteria; "
-                            "per-step progress disabled for this run)",
-                            flush=True,
-                        )
-                        step_progress_warned = True
-                    gen_kwargs.pop("stopping_criteria", None)
-                    try:
-                        with torch.inference_mode():
-                            if mode == "clone":
-                                wavs, sample_rate = model.generate_voice_clone(
-                                    text=text,
-                                    language=LANGUAGE,
-                                    ref_audio=ref_audio,
-                                    ref_text=ref_text,
-                                    **gen_kwargs,
-                                )
-                            else:
-                                wavs, sample_rate = model.generate_voice_design(
-                                    text=text,
-                                    language=LANGUAGE,
-                                    instruct=instruct,
-                                    **gen_kwargs,
-                                )
-                        wav = wavs[0]
-                        sf.write(output_path, wav, sample_rate)
-                        duration = len(wav) / float(sample_rate)
-                        elapsed = time.monotonic() - started
-                        times.append(elapsed)
-                        print(f"DONE  {duration:.2f}s audio  |  {elapsed:.1f}s wall")
-                    except Exception as exc2:
-                        elapsed = time.monotonic() - started
-                        times.append(elapsed)
-                        print(f"\nFAILED: {type(exc2).__name__}: {exc2}")
-                else:
-                    elapsed = time.monotonic() - started
-                    times.append(elapsed)
-                    print(f"\nFAILED: {type(exc).__name__}: {exc}")
+                audio_sec = len(wav) / float(sample_rate)
+                audio_totals.append(audio_sec)
+                ok = True
+                ok_count += 1
             except Exception as exc:
-                elapsed = time.monotonic() - started
-                times.append(elapsed)
-                print(f"\nFAILED: {type(exc).__name__}: {exc}")
+                fail_count += 1
+                print(f"  error:      {type(exc).__name__}: {exc}", flush=True)
 
+            wall_sec = time.monotonic() - started
+            times.append(wall_sec)
             done_count += 1
-            avg = sum(times) / len(times)
-            print(render_progress(done_count, total_work, avg))
-            sys.stdout.flush()
+
+            print_line_stats(
+                ok=ok,
+                done=done_count,
+                total=total_work,
+                audio_sec=audio_sec,
+                wall_sec=wall_sec,
+                times=times,
+                wav_path=output_path if ok else None,
+                sample_rate=sample_rate,
+            )
 
             gc.collect()
             rebuild_catalog()
@@ -669,14 +577,18 @@ def main():
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-    print()
+    print("=" * 60)
+    print("Story generation finished")
+    print(f"  succeeded:  {ok_count}")
+    print(f"  failed:     {fail_count}")
     if times:
-        print(
-            f"Finished {done_count}/{total_work}  |  "
-            f"avg {sum(times)/len(times):.1f}s/line  |  "
-            f"total gen {format_duration(sum(times))}"
-        )
-    print(f"Catalog: {catalog_path}")
+        print(f"  gen time:   {format_duration(sum(times))}  (avg {sum(times)/len(times):.1f}s/line)")
+    if audio_totals:
+        print(f"  audio out:  {sum(audio_totals):.1f}s total")
+        if times and sum(audio_totals) > 0:
+            print(f"  overall RTF:{sum(times)/sum(audio_totals):.2f}x")
+    print(f"  catalog:    {catalog_path}")
+    print("=" * 60)
 
 
 if __name__ == "__main__":
