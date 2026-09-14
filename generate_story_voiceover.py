@@ -11,6 +11,7 @@ Supports:
 - Resume support: skips lines that already have a valid WAV.
 - Per-line config overrides are supported.
 - Progress bar with % done, sec/line, and ETA.
+- Checks requirements and runs setup_qwen_voiceover.sh if needed.
 """
 
 import argparse
@@ -21,14 +22,135 @@ import os
 import random
 import re
 import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
 
-import numpy as np
-import soundfile as sf
-import torch
-from qwen_tts import Qwen3TTSModel
+
+ROOT = Path(__file__).resolve().parent
+SETUP_SCRIPT = ROOT / "setup_qwen_voiceover.sh"
+
+
+# ---------------------------------------------------------------------------
+# Requirement checks + auto-setup
+# ---------------------------------------------------------------------------
+
+def model_dir_ready(path: Path) -> bool:
+    if not path.is_dir():
+        return False
+    if not (path / "config.json").is_file():
+        return False
+    if any(path.glob("*.safetensors")):
+        return True
+    if any(path.glob("*.bin")):
+        return True
+    if (path / "model.safetensors.index.json").is_file():
+        return True
+    if (path / "pytorch_model.bin.index.json").is_file():
+        return True
+    return False
+
+
+def is_hf_repo_id(path_str: str) -> bool:
+    # e.g. Qwen/Qwen3-TTS-12Hz-1.7B-Base
+    return bool(re.match(r"^[\w.-]+/[\w.-]+$", path_str.strip()))
+
+
+def ensure_qwen_import() -> None:
+    try:
+        from qwen_tts import Qwen3TTSModel  # noqa: F401
+    except ImportError:
+        print("qwen_tts is not importable. Running setup ...", flush=True)
+        run_setup()
+        # re-check
+        try:
+            from qwen_tts import Qwen3TTSModel  # noqa: F401
+        except ImportError as exc:
+            raise SystemExit(
+                "setup finished but qwen_tts still cannot be imported.\n"
+                f"Try: {ROOT / '.venv' / 'bin' / 'python'} -m pip install -U qwen-tts\n"
+                f"Original error: {exc}"
+            ) from exc
+
+
+def run_setup() -> None:
+    if not SETUP_SCRIPT.is_file():
+        raise SystemExit(
+            f"Missing setup script: {SETUP_SCRIPT}\n"
+            "Install deps manually or restore setup_qwen_voiceover.sh"
+        )
+    print()
+    print("=" * 60)
+    print(" Running setup_qwen_voiceover.sh")
+    print("=" * 60)
+    print(flush=True)
+    # Prefer project venv python later; setup creates/uses .venv itself
+    result = subprocess.run(
+        ["bash", str(SETUP_SCRIPT)],
+        cwd=str(ROOT),
+    )
+    if result.returncode != 0:
+        raise SystemExit(f"Setup failed with exit code {result.returncode}")
+    print(flush=True)
+
+
+def resolve_model_path(raw: str) -> str:
+    """Return HF id or absolute local path string for from_pretrained."""
+    raw = raw.strip()
+    if is_hf_repo_id(raw):
+        return raw
+    path = Path(raw).expanduser()
+    if not path.is_absolute():
+        path = (ROOT / path).resolve()
+    return str(path)
+
+
+def ensure_model_available(raw_path: str, mode: str) -> str:
+    """
+    Ensure the configured model can be loaded.
+    If a local path is incomplete, run setup (downloads Base + VoiceDesign),
+    then prefer the local dir if ready, else fall back to the HF repo id.
+    """
+    raw_path = raw_path.strip()
+
+    default_hf = (
+        "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+        if mode == "clone"
+        else "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+    )
+    default_local = ROOT / (
+        "models/Qwen3-TTS-12Hz-1.7B-Base"
+        if mode == "clone"
+        else "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+    )
+
+    if is_hf_repo_id(raw_path):
+        # HF id is always OK; optional: ensure local cache via setup if user wants offline later
+        return raw_path
+
+    path = Path(raw_path).expanduser()
+    if not path.is_absolute():
+        path = (ROOT / path).resolve()
+
+    if model_dir_ready(path):
+        return str(path)
+
+    print(f"Model not ready at: {path}", flush=True)
+    print("Running setup to install deps and download models ...", flush=True)
+    run_setup()
+
+    if model_dir_ready(path):
+        return str(path)
+    if model_dir_ready(default_local):
+        print(f"Using downloaded model at: {default_local}", flush=True)
+        return str(default_local)
+
+    print(
+        f"Local model still incomplete; falling back to Hugging Face id: {default_hf}",
+        flush=True,
+    )
+    return default_hf
 
 
 # ---------------------------------------------------------------------------
@@ -89,7 +211,6 @@ def format_duration(seconds: float) -> str:
 
 
 def render_progress(done: int, total: int, avg_sec: float, bar_width: int = 28) -> str:
-    """Single-line progress: bar, percent, counts, sec/line, ETA."""
     if total <= 0:
         pct = 100.0
         filled = bar_width
@@ -122,35 +243,56 @@ def main():
         default="story_script.json",
         help="Path to the story JSON config (default: story_script.json)",
     )
+    parser.add_argument(
+        "--skip-setup",
+        action="store_true",
+        help="Do not auto-run setup_qwen_voiceover.sh if requirements are missing",
+    )
     args = parser.parse_args()
 
-    ROOT = Path(__file__).resolve().parent
     CONFIG_PATH = Path(args.config).expanduser().resolve()
 
     if not CONFIG_PATH.exists():
         raise SystemExit(f"Config not found: {CONFIG_PATH}")
 
+    # Import check (may run setup)
+    if not args.skip_setup:
+        ensure_qwen_import()
+    else:
+        try:
+            from qwen_tts import Qwen3TTSModel  # noqa: F401
+        except ImportError as exc:
+            raise SystemExit(
+                "qwen_tts not importable and --skip-setup was set.\n"
+                f"{exc}"
+            ) from exc
+
+    import numpy as np
+    import soundfile as sf
+    import torch
+    from qwen_tts import Qwen3TTSModel
+
     story = load_story(CONFIG_PATH)
 
-    # Paths
     story_meta = story.get("story", {})
     output_rel = story_meta.get("output_dir", f"story-voiceovers/{CONFIG_PATH.stem}")
     OUTPUT_DIR = (ROOT / output_rel).resolve()
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Model settings
     model_cfg = story.get("model", {})
-    mode = model_cfg.get("mode", "clone").lower()  # "clone" (Base) or "design" (VoiceDesign)
+    mode = model_cfg.get("mode", "clone").lower()
 
-    MODEL_DIR = Path(
-        model_cfg.get(
-            "path",
-            "models/Qwen3-TTS-12Hz-1.7B-Base" if mode == "clone"
-            else "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-        )
+    raw_model_path = model_cfg.get(
+        "path",
+        "models/Qwen3-TTS-12Hz-1.7B-Base"
+        if mode == "clone"
+        else "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
     )
-    if not MODEL_DIR.is_absolute():
-        MODEL_DIR = ROOT / MODEL_DIR
+
+    if args.skip_setup:
+        model_path = resolve_model_path(raw_model_path)
+    else:
+        model_path = ensure_model_available(raw_model_path, mode)
 
     device_map = model_cfg.get("device_map", "cpu")
     dtype_str = model_cfg.get("dtype", "bfloat16")
@@ -163,7 +305,6 @@ def main():
     except RuntimeError:
         pass
 
-    # Defaults
     defaults = story.get("defaults", {})
     TEMPERATURE = float(defaults.get("temperature", 0.80))
     TOP_P = float(defaults.get("top_p", 0.90))
@@ -174,7 +315,6 @@ def main():
     speakers = story["speakers"]
     lines = story["lines"]
 
-    # Validate speakers for the chosen mode
     for key, spk in speakers.items():
         if mode == "clone":
             if not spk.get("ref_audio"):
@@ -196,10 +336,8 @@ def main():
                     f"Speaker '{key}' is missing description (required for VoiceDesign mode)."
                 )
 
-    # Copy config for reproducibility
     shutil.copy2(CONFIG_PATH, OUTPUT_DIR / "CONFIG_USED.json")
 
-    # Catalog
     catalog_path = OUTPUT_DIR / "story_catalog.csv"
 
     def rebuild_catalog():
@@ -236,7 +374,6 @@ def main():
 
     rebuild_catalog()
 
-    # Work queue: only lines that still need generation
     work = []
     for i, line in enumerate(lines):
         lid = str(line.get("id", f"{i+1:03d}"))
@@ -257,7 +394,7 @@ def main():
     print(f"Config:     {CONFIG_PATH}")
     print(f"Output:     {OUTPUT_DIR}")
     print(f"Mode:       {mode}")
-    print(f"Model:      {MODEL_DIR}")
+    print(f"Model:      {model_path}")
     print(f"Lines:      {len(lines)}")
     print(f"Remaining:  {total_work}")
     print(f"Threads:    {torch.get_num_threads()}")
@@ -267,13 +404,10 @@ def main():
         print("All lines already generated. Nothing to do.")
         return
 
-    # ------------------------------------------------------------------
-    # Load model ONCE and keep it for the whole story
-    # ------------------------------------------------------------------
     print("Loading model (this happens only once)...")
     t0 = time.monotonic()
     model = Qwen3TTSModel.from_pretrained(
-        str(MODEL_DIR),
+        model_path,
         device_map=device_map,
         dtype=dtype,
     )
@@ -282,10 +416,7 @@ def main():
     print(render_progress(0, total_work, 0.0))
     sys.stdout.flush()
 
-    # ------------------------------------------------------------------
-    # Generate every remaining line
-    # ------------------------------------------------------------------
-    times = []  # wall seconds per successful (or attempted) generation
+    times = []
     done_count = 0
 
     try:
@@ -309,13 +440,11 @@ def main():
             filename = f"{lid}_{slugify(speaker_key)}_seed_{seed}.wav"
             output_path = OUTPUT_DIR / filename
 
-            # Per-line overrides
             temp = float(line.get("temperature", TEMPERATURE))
             top_p = float(line.get("top_p", TOP_P))
             top_k = int(line.get("top_k", TOP_K))
             max_tokens = int(line.get("max_new_tokens", MAX_NEW_TOKENS))
 
-            # Sidecar for exact reproducibility
             sidecar = {
                 "id": lid,
                 "speaker_key": speaker_key,
@@ -363,7 +492,6 @@ def main():
             print("-" * 60)
             sys.stdout.flush()
 
-            # Deterministic seed for this line
             random.seed(seed)
             np.random.seed(seed)
             torch.manual_seed(seed)
