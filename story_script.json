@@ -1,6 +1,6 @@
 {
   "story": {
-    "title": "The Little Queen and the Ancient Gate",
+    "title": "The Little Queen and the Mountain That Listened",
     "language": "English",
     "output_dir": "story-voiceovers/little_queen_gate_clone"
   },
@@ -28,7 +28,7 @@
       "name": "Bright Little Queen",
       "seed": 38117,
       "ref_audio": "voice-design-options/01_bright_little_queen/sample_01_seed_38117.wav",
-      "ref_text": "The moonlit tide is changing, and I can hear silver bells beneath the waves. Somewhere beyond that glowing gate, our lost kingdom is waiting. Come on, stay close\u2014we've come much too far to turn back now."
+      "ref_text": "The moonlit tide is changing, and I can hear silver bells beneath the waves. Somewhere beyond that glowing gate, our lost kingdom is waiting. Come on, stay close—we've come much too far to turn back now."
     },
     "demon": {
       "name": "Ancient Demon",
@@ -40,7 +40,7 @@
       "name": "Story Narrator",
       "seed": 74629,
       "ref_audio": "voice-design-options/06_warm_storybook_heroine/sample_01_seed_38117.wav",
-      "ref_text": "The moonlit tide is changing, and I can hear silver bells beneath the waves. Somewhere beyond that glowing gate, our lost kingdom is waiting. Come on, stay close\u2014we've come much too far to turn back now."
+      "ref_text": "The moonlit tide is changing, and I can hear silver bells beneath the waves. Somewhere beyond that glowing gate, our lost kingdom is waiting. Come on, stay close—we've come much too far to turn back now."
     }
   },
 
@@ -48,74 +48,326 @@
     {
       "id": "001",
       "speaker": "narrator",
-      "direction": "Calm opening narration with a slight sense of wonder and mystery.",
-      "text": "Once, beneath a mountain that no map dared to name, a forgotten gate waited for someone brave enough to open it."
+      "direction": "Calm, storybook opening. Quiet wonder, as if beginning a tale by firelight.",
+      "text": "In the valley of the three rivers, there once lived a little queen whose kingdom was smaller than most maps bothered to draw."
     },
     {
       "id": "002",
       "speaker": "narrator",
-      "direction": "Slightly more intimate, drawing the listener closer.",
-      "text": "The key had been hidden for three hundred years. Tonight, a little queen held it in her hand."
+      "direction": "Gentle, establishing her character with warmth.",
+      "text": "Her name was Elira, and though her crown was only silver wire and her castle only stone, she ruled with a careful heart."
     },
     {
       "id": "003",
-      "speaker": "queen",
-      "direction": "Curious and a little nervous, but determined. Soft volume, genuine wonder.",
-      "text": "The key is warm. Why is the key warm?"
+      "speaker": "narrator",
+      "direction": "Slight tension enters. Something is wrong in the world.",
+      "text": "But that summer the rivers began to fail. First the northern stream turned to mud. Then the eastern fork grew still. By harvest, only a thin silver trickle remained."
     },
     {
       "id": "004",
       "speaker": "queen",
-      "direction": "Quiet resolve. She is speaking more to herself than to anyone else.",
-      "text": "If something has been waiting this long, then it must be important. I am not turning back."
+      "direction": "Worried but controlled. Speaking to her council, trying to sound older than she is.",
+      "text": "If the water is leaving us, then something upstream is taking it. I will not sit on a dry throne and call it patience."
     },
     {
       "id": "005",
       "speaker": "narrator",
-      "direction": "Building tension. The gate is about to open.",
-      "text": "She pressed the key into the ancient lock. Stone ground against stone. Cold air rushed out of the dark."
+      "direction": "Narrative bridge. Mild disapproval from the adults around her.",
+      "text": "Her advisors begged her to send soldiers. Her aunt begged her to pray. Elira did neither. She took the old key from the vault—the one no one had touched in three hundred years—and walked alone toward the mountain."
     },
     {
       "id": "006",
-      "speaker": "demon",
-      "direction": "Slow, deep, amused. Completely in control.",
-      "text": "Hmph... so, little queen, you finally opened my gate."
+      "speaker": "queen",
+      "direction": "Quiet resolve, almost to herself as she climbs.",
+      "text": "If something has been waiting this long, then it must be important. I am not turning back."
     },
     {
       "id": "007",
-      "speaker": "demon",
-      "direction": "Dark amusement mixed with genuine curiosity. Still calm and heavy.",
-      "text": "I have watched kingdoms rise, rot, and disappear while I waited beneath this mountain. Come closer. I want to see what sort of creature was foolish enough to wake me."
+      "speaker": "narrator",
+      "direction": "Building atmosphere. The mountain feels alive and unfriendly.",
+      "text": "The mountain had no path, only scars where older roads had been. Cold air breathed from cracks in the stone. At the highest shelf of rock, she found the gate."
     },
     {
       "id": "008",
       "speaker": "queen",
-      "direction": "Brave, slightly defiant, still keeping her bright youthful character. Clear and steady.",
-      "text": "I didn't come to wake you. I came because something under this mountain is calling for help."
+      "direction": "Curious and a little nervous. Soft volume. Genuine wonder mixed with fear.",
+      "text": "The key is warm. Why is the key warm?"
     },
     {
       "id": "009",
-      "speaker": "demon",
-      "direction": "Genuine surprise held under centuries of arrogance.",
-      "text": "Help? How interesting. In all the centuries I have slept, no one has ever claimed they came to help me."
+      "speaker": "narrator",
+      "direction": "Tension. The moment of crossing.",
+      "text": "She pressed it into the lock. Stone ground against stone. A breath of winter rushed out of the dark, and the gate opened like a mouth that had been waiting to speak."
     },
     {
       "id": "010",
-      "speaker": "queen",
-      "direction": "Earnest and a little fierce. Her courage is real even if she is small.",
-      "text": "Then maybe you have been waiting for the wrong kind of visitor. I am not here to take anything from you. I am here to listen."
+      "speaker": "demon",
+      "direction": "Slow, deep, amused. Completely in control. A low sound under the first words.",
+      "text": "Hmph... so, little queen, you finally opened my gate."
     },
     {
       "id": "011",
       "speaker": "demon",
-      "direction": "Quiet, heavy consideration. The amusement softens into something older and more serious.",
-      "text": "Listen... Very well, little queen. Step into the light where I can see your face. If you are telling the truth, the mountain itself will know."
+      "direction": "Dark curiosity. Heavy, unhurried, testing her.",
+      "text": "I have watched kingdoms rise, rot, and disappear while I waited beneath this mountain. Come closer. I want to see what sort of creature was foolish enough to wake me."
     },
     {
       "id": "012",
+      "speaker": "queen",
+      "direction": "Brave, slightly defiant. Clear and steady even though she is afraid.",
+      "text": "I didn't come to wake you. I came because something under this mountain is calling for help."
+    },
+    {
+      "id": "013",
+      "speaker": "demon",
+      "direction": "Genuine surprise held under arrogance. A short low breath before speaking.",
+      "text": "Help? How interesting. In all the centuries I have slept, no one has ever claimed they came to help me."
+    },
+    {
+      "id": "014",
+      "speaker": "queen",
+      "direction": "Earnest, a little fierce. Her courage is real.",
+      "text": "Then maybe you have been waiting for the wrong kind of visitor. I am not here to take anything from you. I am here because my rivers are dying."
+    },
+    {
+      "id": "015",
+      "speaker": "demon",
+      "direction": "Quieter now. The amusement thins into something older and more serious.",
+      "text": "Ah. The water. Of course. You followed the thirst."
+    },
+    {
+      "id": "016",
       "speaker": "narrator",
-      "direction": "Soft closing of the scene. A sense that something important has begun.",
-      "text": "And so the little queen walked forward, into the dark that had waited for her, and the ancient gate closed behind them both."
+      "direction": "Descriptive, slightly ominous. The cavern reveals itself.",
+      "text": "Light kindled along the walls—not fire, but a pale glow from veins of crystal. The cavern was vast, and at its center lay a lake so still it looked like black glass."
+    },
+    {
+      "id": "017",
+      "speaker": "demon",
+      "direction": "Measured explanation. Pride and bitterness mixed.",
+      "text": "This lake is the heart of the three rivers. For three hundred years I have held it closed, so that nothing above could drink without my leave."
+    },
+    {
+      "id": "018",
+      "speaker": "queen",
+      "direction": "Shock turning into controlled anger. Still respectful, but firm.",
+      "text": "You starved a whole valley for three hundred years? Children have carried water in jars for miles. Fields have cracked. Why?"
+    },
+    {
+      "id": "019",
+      "speaker": "demon",
+      "direction": "Defensive heat under the deep voice. Old grievance rising.",
+      "text": "Because the last queen who stood where you stand now made a promise and broke it. She took my protection, then ordered her people to seal this gate and forget my name."
+    },
+    {
+      "id": "020",
+      "speaker": "demon",
+      "direction": "Quieter, more dangerous. The wound is personal.",
+      "text": "I was not their monster until they decided I was. So I became exactly what they feared."
+    },
+    {
+      "id": "021",
+      "speaker": "queen",
+      "direction": "Softening. Listening. The first real crack in her certainty.",
+      "text": "Then you were betrayed. That does not give you the right to punish people who were not even born yet."
+    },
+    {
+      "id": "022",
+      "speaker": "demon",
+      "direction": "Bitter laugh under the words. Testing her again.",
+      "text": "Easy words from a child with a warm crown. What would you offer instead, little queen? Another promise?"
+    },
+    {
+      "id": "023",
+      "speaker": "queen",
+      "direction": "Careful, thinking as she speaks. Not reckless anymore.",
+      "text": "I would offer a bargain that both of us can survive. You need the world above as much as we need the water. Isolation is not strength. It is only a slower kind of dying."
+    },
+    {
+      "id": "024",
+      "speaker": "narrator",
+      "direction": "Tension holds. The demon does not answer at once.",
+      "text": "The demon did not speak for a long time. The lake reflected the crystal light like a second sky. Somewhere in the dark, water dripped with the patience of stone."
+    },
+    {
+      "id": "025",
+      "speaker": "demon",
+      "direction": "Slow, weighing every word. Curiosity winning over rage.",
+      "text": "And if I open the rivers, what stops the next queen from sealing me again the moment her people are no longer thirsty?"
+    },
+    {
+      "id": "026",
+      "speaker": "queen",
+      "direction": "Steady, sincere. This is the core of her character.",
+      "text": "Nothing—unless I make forgetting you impossible. Your name will be taught in every school. Your story will be written beside the laws. And once a year, I will come to this gate myself and ask if the bargain still holds."
+    },
+    {
+      "id": "027",
+      "speaker": "demon",
+      "direction": "Softened, almost unwillingly impressed.",
+      "text": "You would bind your whole reign to a creature your ancestors called a curse."
+    },
+    {
+      "id": "028",
+      "speaker": "queen",
+      "direction": "Quiet courage. No performance—just truth.",
+      "text": "I would bind my reign to the truth. That seems less dangerous than binding it to a lie."
+    },
+    {
+      "id": "029",
+      "speaker": "narrator",
+      "direction": "The turn. Something shifts in the cavern.",
+      "text": "For the first time, the demon's voice lost its edge of mockery. He stepped into the light, and Elira saw that he was not only vast and horned, but tired—tired in the way mountains are tired."
+    },
+    {
+      "id": "030",
+      "speaker": "demon",
+      "direction": "Low, almost gentle. A different register.",
+      "text": "There is a cost you have not asked about. The lake does not open for free. Someone must carry the old seal's weight, or the water will flood the valley instead of feeding it."
+    },
+    {
+      "id": "031",
+      "speaker": "queen",
+      "direction": "Alert, serious. She will not be tricked, but she will not run.",
+      "text": "What kind of weight?"
+    },
+    {
+      "id": "032",
+      "speaker": "demon",
+      "direction": "Honest, without cruelty. Presenting the real price.",
+      "text": "A bond. The one who accepts it will feel every drought and every flood as if it touched their own blood. They will know when the rivers are sick. They will not be able to look away."
+    },
+    {
+      "id": "033",
+      "speaker": "queen",
+      "direction": "A breath of fear, then resolve. Character defining moment.",
+      "text": "Then the weight should not stay with you alone. Share it with me."
+    },
+    {
+      "id": "034",
+      "speaker": "demon",
+      "direction": "Startled. Sharper.",
+      "text": "You do not know what you are offering."
+    },
+    {
+      "id": "035",
+      "speaker": "queen",
+      "direction": "Firm, almost sharp. She has decided.",
+      "text": "I know exactly what I am offering. If the rivers are to live, someone who loves the valley must be tied to them. That is my duty. Not yours alone."
+    },
+    {
+      "id": "036",
+      "speaker": "narrator",
+      "direction": "The ritual begins. Awe and danger mixed.",
+      "text": "The demon studied her for a long moment. Then he raised one vast hand, and the crystal light gathered into a single bright thread between them."
+    },
+    {
+      "id": "037",
+      "speaker": "demon",
+      "direction": "Solemn, almost ceremonial.",
+      "text": "Speak your name into the water, Elira of the three rivers. If you mean what you say, the mountain will hear it."
+    },
+    {
+      "id": "038",
+      "speaker": "queen",
+      "direction": "Clear, formal, a little afraid but unflinching.",
+      "text": "I am Elira. I take half the bond. I will not seal this gate. I will not let my people forget who kept the water when we were cruel."
+    },
+    {
+      "id": "039",
+      "speaker": "narrator",
+      "direction": "Climax of the magic. Sensory and vivid.",
+      "text": "The thread of light entered her chest like cold starlight. For one heartbeat she felt the entire valley—every dry root, every thirsty animal, every child waiting with an empty jar. Then the black lake shuddered and began to move."
+    },
+    {
+      "id": "040",
+      "speaker": "demon",
+      "direction": "Quieter, almost relieved. The centuries of holding on begin to loosen.",
+      "text": "It is done. The rivers will wake by morning."
+    },
+    {
+      "id": "041",
+      "speaker": "queen",
+      "direction": "Breathless, changed. Wonder and cost together.",
+      "text": "I can feel them. Like veins under the skin of the world."
+    },
+    {
+      "id": "042",
+      "speaker": "narrator",
+      "direction": "The twist lands gently but clearly.",
+      "text": "And that was when Elira understood the deeper truth the mountain had been guarding. The demon had not only been punishing the valley. He had been protecting it from something worse."
+    },
+    {
+      "id": "043",
+      "speaker": "demon",
+      "direction": "Grave. The real secret.",
+      "text": "The seal did not only hold the water in. It held something out. An older hunger sleeps in the deep stone. While I kept the gate closed, it could not climb."
+    },
+    {
+      "id": "044",
+      "speaker": "queen",
+      "direction": "Shock, then fierce focus. The story is not over.",
+      "text": "Then opening the rivers has woken more than the streams."
+    },
+    {
+      spaker": "demon",
+      "id": "045",
+      "direction": "Heavy honesty. Partnership beginning.",
+      "text": "Yes. Which is why I could not simply release the water and vanish into legend. Someone had to remain who could feel the mountain's pulse. Now there are two of us."
+    },
+    {
+      "id": "046",
+      "speaker": "queen",
+      "direction": "Absorbing the weight. Grown in a single hour.",
+      "text": "So the bargain was never only about forgiveness. It was about sharing a watch neither of us can abandon."
+    },
+    {
+      "id": "047",
+      "speaker": "demon",
+      "direction": "Almost gentle. Respect earned.",
+      "text": "You learn quickly, little queen. Faster than the one who sealed me."
+    },
+    {
+      "id": "048",
+      "speaker": "narrator",
+      "direction": "Resolution beginning. Dawn energy.",
+      "text": "By the time Elira walked back down the mountain, the northern stream was already murmuring over stones it had forgotten how to touch. In the villages, people woke to the sound of water and thought it was rain."
+    },
+    {
+      "id": "049",
+      "speaker": "queen",
+      "direction": "Public voice. Clear, royal, changed.",
+      "text": "Listen well. The rivers return because a promise was kept, not because we were clever. From this day, the mountain has a name in our laws, and its guardian has a place in our history."
+    },
+    {
+      "id": "050",
+      "speaker": "narrator",
+      "direction": "Warm closing narration. The cost remains, but so does hope.",
+      "text": "Some said the little queen had gone mad with fear in the dark. Others said she had made a pact with a devil. Only Elira—and the tired creature beneath the stone—knew that the valley's water would now answer to two hearts instead of none."
+    },
+    {
+      "id": "051",
+      "speaker": "demon",
+      "direction": "Distant, as if speaking across the bond. Quiet satisfaction.",
+      "text": "When the older hunger stirs, you will feel it first. Do not face it alone. Call, and I will answer."
+    },
+    {
+      "id": "052",
+      "speaker": "queen",
+      "direction": "Soft, private, speaking into the bond. No longer a child playing at rule.",
+      "text": "And when my people forget again—as people do—I will remind them. That is my half of the watch."
+    },
+    {
+      "id": "053",
+      "speaker": "narrator",
+      "direction": "Final image. Peaceful but not naive. Storybook close.",
+      "text": "And so the little queen returned to her small kingdom with a silver key at her belt and a mountain alive in her blood. The rivers ran full that year, and every year after—so long as the bargain held, and the gate remembered both their names."
+    },
+    {
+      "id": "054",
+      "speaker": "narrator",
+      "direction": "Soft epilogue beat. A hint of future stories.",
+      "text": "But that is another tale, for another night when the water runs loud against the stones, and someone wonders why the little queens of that valley never learned to fear the dark under the mountain."
     }
   ]
 }
