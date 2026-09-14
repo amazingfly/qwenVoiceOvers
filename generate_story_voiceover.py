@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Full-story line-by-line voiceover generator for Qwen3-TTS VoiceDesign.
+Full-story line-by-line voiceover generator for Qwen3-TTS.
+
+Supports:
+  - Base model + voice cloning (ref_audio / ref_text)
+  - Optional VoiceDesign fallback (description / instruct)
 
 - Loads the model once and keeps it in memory for the entire story.
-- Every line is generated separately (as required).
+- Every line is generated separately.
 - Resume support: skips lines that already have a valid WAV.
-- Per-line config is fully supported.
+- Per-line config overrides are supported.
 """
 
 import argparse
@@ -45,7 +49,6 @@ def load_story(path: Path) -> dict:
 
 
 def get_line_seed(line: dict, speaker: dict, defaults: dict, line_index: int) -> int:
-    # Explicit per-line seed wins
     if "seed" in line:
         return int(line["seed"])
 
@@ -60,16 +63,14 @@ def get_line_seed(line: dict, speaker: dict, defaults: dict, line_index: int) ->
     if strategy == "fixed":
         return int(defaults.get("base_seed", 38117))
 
-    # fallback
     return int(speaker.get("seed", 38117))
 
 
-def build_instruct(speaker: dict, line: dict) -> str:
-    description = line.get("description") or speaker["description"]
-    direction = line.get("direction", "").strip()
-    if direction:
-        return f"{description}\n\nFor this line: {direction}"
-    return description
+def resolve_path(root: Path, path_str: str) -> Path:
+    p = Path(path_str).expanduser()
+    if not p.is_absolute():
+        p = (root / p).resolve()
+    return p
 
 
 # ---------------------------------------------------------------------------
@@ -78,7 +79,7 @@ def build_instruct(speaker: dict, line: dict) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate full-story voiceovers line-by-line with Qwen3-TTS VoiceDesign."
+        description="Generate full-story voiceovers line-by-line with Qwen3-TTS (Base clone or VoiceDesign)."
     )
     parser.add_argument(
         "--config",
@@ -103,8 +104,14 @@ def main():
 
     # Model settings
     model_cfg = story.get("model", {})
+    mode = model_cfg.get("mode", "clone").lower()  # "clone" (Base) or "design" (VoiceDesign)
+
     MODEL_DIR = Path(
-        model_cfg.get("path", "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign")
+        model_cfg.get(
+            "path",
+            "models/Qwen3-TTS-12Hz-1.7B-Base" if mode == "clone"
+            else "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        )
     )
     if not MODEL_DIR.is_absolute():
         MODEL_DIR = ROOT / MODEL_DIR
@@ -131,6 +138,28 @@ def main():
     speakers = story["speakers"]
     lines = story["lines"]
 
+    # Validate speakers for the chosen mode
+    for key, spk in speakers.items():
+        if mode == "clone":
+            if not spk.get("ref_audio"):
+                raise ValueError(
+                    f"Speaker '{key}' is missing ref_audio (required for Base/clone mode)."
+                )
+            if not spk.get("ref_text"):
+                raise ValueError(
+                    f"Speaker '{key}' is missing ref_text (required for Base/clone mode)."
+                )
+            ref_path = resolve_path(ROOT, spk["ref_audio"])
+            if not ref_path.exists():
+                raise FileNotFoundError(
+                    f"Speaker '{key}' ref_audio not found: {ref_path}"
+                )
+        else:
+            if not spk.get("description"):
+                raise ValueError(
+                    f"Speaker '{key}' is missing description (required for VoiceDesign mode)."
+                )
+
     # Copy config for reproducibility
     shutil.copy2(CONFIG_PATH, OUTPUT_DIR / "CONFIG_USED.json")
 
@@ -142,7 +171,7 @@ def main():
             writer = csv.writer(f)
             writer.writerow([
                 "id", "speaker", "seed", "duration_seconds",
-                "wav", "direction", "text"
+                "wav", "direction", "text", "mode"
             ])
             for i, line in enumerate(lines):
                 lid = str(line.get("id", f"{i+1:03d}"))
@@ -166,6 +195,7 @@ def main():
                     str(wav_path.relative_to(ROOT)),
                     line.get("direction", ""),
                     line.get("text", ""),
+                    mode,
                 ])
 
     rebuild_catalog()
@@ -184,10 +214,12 @@ def main():
 
     print()
     print("=" * 60)
-    print("Qwen3-TTS VoiceDesign – Full Story Voiceover")
+    print("Qwen3-TTS – Full Story Voiceover")
     print("=" * 60)
     print(f"Config:     {CONFIG_PATH}")
     print(f"Output:     {OUTPUT_DIR}")
+    print(f"Mode:       {mode}")
+    print(f"Model:      {MODEL_DIR}")
     print(f"Lines:      {len(lines)}")
     print(f"Remaining:  {remaining}")
     print(f"Threads:    {torch.get_num_threads()}")
@@ -241,8 +273,6 @@ def main():
             top_k = int(line.get("top_k", TOP_K))
             max_tokens = int(line.get("max_new_tokens", MAX_NEW_TOKENS))
 
-            instruct = build_instruct(speaker, line)
-
             # Sidecar for exact reproducibility
             sidecar = {
                 "id": lid,
@@ -251,24 +281,40 @@ def main():
                 "seed": seed,
                 "direction": line.get("direction", ""),
                 "text": text,
-                "instruct": instruct,
+                "mode": mode,
                 "generation": {
                     "temperature": temp,
                     "top_p": top_p,
                     "top_k": top_k,
                     "max_new_tokens": max_tokens,
-                    "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
                     "dtype": dtype_str,
                 },
             }
+
+            if mode == "clone":
+                ref_audio = str(resolve_path(ROOT, speaker["ref_audio"]))
+                ref_text = speaker["ref_text"]
+                sidecar["ref_audio"] = ref_audio
+                sidecar["ref_text"] = ref_text
+            else:
+                description = line.get("description") or speaker["description"]
+                direction = line.get("direction", "").strip()
+                instruct = (
+                    f"{description}\n\nFor this line: {direction}"
+                    if direction else description
+                )
+                sidecar["instruct"] = instruct
+
             output_path.with_suffix(".json").write_text(
                 json.dumps(sidecar, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
 
             print("-" * 60)
-            print(f"Line {lid}  |  {speaker.get('name', speaker_key)}")
+            print(f"Line {lid}  |  {speaker.get('name', speaker_key)}  [{mode}]")
             print(f"Seed: {seed}")
+            if mode == "clone":
+                print(f"Ref:  {speaker['ref_audio']}")
             print(f"Direction: {line.get('direction', '')}")
             print(f"Text: {text}")
             print("-" * 60)
@@ -281,16 +327,29 @@ def main():
             started = time.monotonic()
             try:
                 with torch.inference_mode():
-                    wavs, sample_rate = model.generate_voice_design(
-                        text=text,
-                        language=LANGUAGE,
-                        instruct=instruct,
-                        do_sample=True,
-                        temperature=temp,
-                        top_p=top_p,
-                        top_k=top_k,
-                        max_new_tokens=max_tokens,
-                    )
+                    if mode == "clone":
+                        wavs, sample_rate = model.generate_voice_clone(
+                            text=text,
+                            language=LANGUAGE,
+                            ref_audio=ref_audio,
+                            ref_text=ref_text,
+                            do_sample=True,
+                            temperature=temp,
+                            top_p=top_p,
+                            top_k=top_k,
+                            max_new_tokens=max_tokens,
+                        )
+                    else:
+                        wavs, sample_rate = model.generate_voice_design(
+                            text=text,
+                            language=LANGUAGE,
+                            instruct=instruct,
+                            do_sample=True,
+                            temperature=temp,
+                            top_p=top_p,
+                            top_k=top_k,
+                            max_new_tokens=max_tokens,
+                        )
 
                 wav = wavs[0]
                 sf.write(output_path, wav, sample_rate)
@@ -305,7 +364,6 @@ def main():
             rebuild_catalog()
 
     finally:
-        # Explicit cleanup (optional but nice)
         del model
         gc.collect()
         if torch.cuda.is_available():

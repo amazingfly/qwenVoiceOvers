@@ -2,11 +2,12 @@
   "story": {
     "title": "The Little Queen and the Ancient Gate",
     "language": "English",
-    "output_dir": "story-voiceovers/little_queen_gate"
+    "output_dir": "story-voiceovers/little_queen_gate_clone"
   },
 
   "model": {
-    "path": "models/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "mode": "clone",
+    "path": "models/Qwen3-TTS-12Hz-1.7B-Base",
     "device_map": "cpu",
     "dtype": "bfloat16",
     "threads": 6
@@ -25,18 +26,21 @@
   "speakers": {
     "queen": {
       "name": "Bright Little Queen",
-      "description": "A young female storybook heroine with a clear, bright, naturally youthful voice. Curious, clever, cheerful and adventurous. Medium-high pitch, expressive melodic intonation, crisp speech, and genuine excitement without sounding exaggerated or cartoonish. She should sound like a brave little queen who is always ready to discover something magical.",
-      "seed": 38117
+      "seed": 38117,
+      "ref_audio": "voice-design-options/01_bright_little_queen/sample_01_seed_38117.wav",
+      "ref_text": "The moonlit tide is changing, and I can hear silver bells beneath the waves. Somewhere beyond that glowing gate, our lost kingdom is waiting. Come on, stay close\u2014we've come much too far to turn back now."
     },
     "demon": {
       "name": "Ancient Demon",
-      "description": "An ancient male demon with an extremely deep bass voice, immense chest resonance, a dark rough timbre, and subtle natural gravel. Mature, intelligent, physically imposing, and completely self-assured. Very low pitch with deliberate pacing and clear articulation. His voice should remain recognizably the same whether calm, amused, or angry, with menace coming from weight and authority rather than distortion or constant growling.",
-      "seed": 52841
+      "seed": 52841,
+      "ref_audio": "voice-design-options/collection/male/01_calm_menace_seed_38117.wav",
+      "ref_text": "So, you are the little queen who opened the forgotten gate. Interesting. I expected someone taller. Still, courage has never cared much about size. Come closer and tell me why you have entered a place even kings were wise enough to avoid."
     },
     "narrator": {
       "name": "Story Narrator",
-      "description": "A warm, clear, neutral adult narrator voice. Calm, slightly rich, excellent diction, moderate pace. Feels like a classic storybook reading without becoming theatrical.",
-      "seed": 74629
+      "seed": 74629,
+      "ref_audio": "voice-design-options/06_warm_storybook_heroine/sample_01_seed_38117.wav",
+      "ref_text": "The moonlit tide is changing, and I can hear silver bells beneath the waves. Somewhere beyond that glowing gate, our lost kingdom is waiting. Come on, stay close\u2014we've come much too far to turn back now."
     }
   },
 
@@ -74,7 +78,7 @@
     {
       "id": "006",
       "speaker": "demon",
-      "direction": "Slow, deep, amused. Let a low throat sound sit under the first words. Completely in control.",
+      "direction": "Slow, deep, amused. Completely in control.",
       "text": "Hmph... so, little queen, you finally opened my gate."
     },
     {
@@ -92,7 +96,7 @@
     {
       "id": "009",
       "speaker": "demon",
-      "direction": "Genuine surprise held under centuries of arrogance. A short low breath before speaking.",
+      "direction": "Genuine surprise held under centuries of arrogance.",
       "text": "Help? How interesting. In all the centuries I have slept, no one has ever claimed they came to help me."
     },
     {
